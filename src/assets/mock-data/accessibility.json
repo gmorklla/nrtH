@@ -1,0 +1,438 @@
+﻿{
+            "startDate": "20151114", "startTime": "07:00", "endDate": "20151115", "endTime": "19:45", "type": "Accessibility", "neId": "091942L2100",
+            "formula": "Accessibility  (%) = 100 * (((kpis.getPmRrcConnEstabSucc()/( kpis.getPmRrcConnEstabAtt() - kpis.getPmRrcConnEstabAttReatt()) * (kpis.getPmS1SigConnEstabSucc()/kpis.getPmS1SigConnEstabAtt()) * ( kpis.getPmErabEstabSuccInit() / kpis.getPmErabEstabAttInit() ))))",
+            "kpis": [
+               {
+                   "date": "20151114",
+                   "time": "0815",
+                   "cellId": "EUtranCellFDD=091942002",
+                   "calKpiValue": 100,
+                   "countersValues": [
+                       {
+                           "counter": "pmErabEstabSuccInit",
+                           "value": 20
+                       },
+                       {
+                           "counter": "pmErabEstabAttInit",
+                           "value": 20
+                       },
+                       {
+                           "counter": "pmRrcConnEstabAtt",
+                           "value": 22
+                       },
+                       {
+                           "counter": "pmRrcConnEstabAttReatt",
+                           "value": 0
+                       },
+                       {
+                           "counter": "pmRrcConnEstabSucc",
+                           "value": 22
+                       },
+                       {
+                           "counter": "pmS1SigConnEstabSucc",
+                           "value": 22
+                       },
+                       {
+                           "counter": "pmS1SigConnEstabAtt",
+                           "value": 22
+                       }
+                   ]
+               },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 33
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 20
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 20
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 22
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 22
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 22
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 22
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 33
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 13
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 13
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 18
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 18
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 18
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 18
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 47
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 47
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 49
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 49
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 49
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 49
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 13
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 13
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 18
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 18
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 18
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 18
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 47
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 47
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 49
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 49
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 49
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 49
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 24
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 24
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 27
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 27
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 27
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 27
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 73
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 73
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 80
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 80
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 80
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 80
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 24
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 24
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 27
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 27
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 27
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 27
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 73
+                        },
+                        {
+                            "counter": "pmErabEstabAttInit",
+                            "value": 73
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAtt",
+                            "value": 80
+                        },
+                        {
+                            "counter": "pmRrcConnEstabAttReatt",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmRrcConnEstabSucc",
+                            "value": 80
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabSucc",
+                            "value": 80
+                        },
+                        {
+                            "counter": "pmS1SigConnEstabAtt",
+                            "value": 80
+                        }
+                    ]
+                }
+            ]
+        }

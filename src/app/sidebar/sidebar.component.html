@@ -1,0 +1,16 @@
+<nav>
+    <h3>Telcel</h3>
+    <form action="">
+	    <ul>
+	        <li *ngFor="let region of regiones">
+
+				<md-select placeholder="{{region.nombre}}" [(ngModel)]="region.selected" name="{{region.nombre}}">
+					<md-option *ngFor="let item of region.oss" [value]="item.name" (onSelect)="setOss(item, region.nombre)">
+					  {{item.name}}
+					</md-option>
+				</md-select>
+
+	        </li>
+	    </ul>
+	</form>
+</nav>
