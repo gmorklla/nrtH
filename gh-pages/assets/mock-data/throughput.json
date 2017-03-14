@@ -1,0 +1,1526 @@
+﻿{
+            "startDate": "20150911", "startTime": "07:00", "endDate": "20150912", "endTime": "19:45", "type": "DLCellThroughput", "neId": "091942L2100",
+            "formula": "DL Cell Throughput (Mbps) = ((kpis.getPmPdcpVolDlDrb() - kpis.getPmPdcpVolDlDrbLastTTI()) / kpis.getPmUeThpTimeDl())",
+            "kpis": [
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 22,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 3384950
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 19496
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 151901
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 32,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 23770
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 6162
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 539
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 22,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 3384950
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 19496
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 151901
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 32,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 23770
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 6162
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 539
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 417
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 281
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 7
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 33,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 11343
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 6572
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 143
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 417
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 281
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 7
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 33,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 11343
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 6572
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 143
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 1351
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 604
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 29
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 22,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 10063
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 4518
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 244
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 1351
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 604
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 29
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 22,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 10063
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 4518
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 244
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0900",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 34,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 2607
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 1689
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 27
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0900",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 12,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 314434
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 23920
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 22732
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0900",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 34,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 2607
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 1689
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 27
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0900",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 12,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 314434
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 23920
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 22732
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0915",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 10,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 131952
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 16911
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 11281
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0915",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 22,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 214556
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 23564
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 8665
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0915",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 10,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 131952
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 16911
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 11281
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0915",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 22,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 214556
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 23564
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 8665
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0930",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 22,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 43212
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 12832
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 1328
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0930",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 18,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 296424
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 29163
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 14265
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0930",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 22,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 43212
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 12832
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 1328
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0930",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 18,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 296424
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 29163
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 14265
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0945",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 127003
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 31925
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 3793
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0945",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 18,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 92353
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 29903
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 3411
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0945",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 127003
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 31925
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 3793
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0945",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 18,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 92353
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 29903
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 3411
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1000",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 32,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 253012
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 88239
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 4999
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1000",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 33,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 128626
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 42786
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 2597
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1000",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 32,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 253012
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 88239
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 4999
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1000",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 33,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 128626
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 42786
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 2597
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1015",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 16,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 149075
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 36446
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 6681
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1015",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 29,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 393804
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 84341
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 10619
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1015",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 16,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 149075
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 36446
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 6681
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1015",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 29,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 393804
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 84341
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 10619
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1030",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 112963
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 34641
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 3926
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1030",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 222114
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 61711
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 6373
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1030",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 112963
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 34641
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 3926
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1030",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 222114
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 61711
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 6373
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1045",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 13,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 503772
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 63127
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 31667
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1045",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 254546
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 147859
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 5339
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1045",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 13,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 503772
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 63127
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 31667
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1045",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 254546
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 147859
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 5339
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1100",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 18,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 485529
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 80304
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 21758
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1100",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 328350
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 282981
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 2322
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1100",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 18,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 485529
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 80304
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 21758
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1100",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 328350
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 282981
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 2322
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1115",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 17,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 338094
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 87058
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 14520
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1115",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 21,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 938728
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 336913
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 27967
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1115",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 17,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 338094
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 87058
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 14520
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1115",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 21,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 938728
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 336913
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 27967
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1130",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 18,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 410719
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 88223
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 17626
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1130",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 15,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 300671
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 114757
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 11741
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1130",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 18,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 410719
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 88223
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 17626
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1130",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 15,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 300671
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 114757
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 11741
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1145",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 16,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 314991
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 57029
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 15189
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1145",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 21,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 191150
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 83787
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 4946
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1145",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 16,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 314991
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 57029
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 15189
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1145",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 21,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 191150
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 83787
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 4946
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1200",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 13,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 395431
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 73471
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 23291
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1200",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 29,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 380414
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 102860
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 9558
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1200",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 13,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 395431
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 73471
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 23291
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1200",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 29,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 380414
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 102860
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 9558
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1215",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 654411
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 299282
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 17846
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1215",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 30,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 349693
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 87932
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 8525
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1215",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 19,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 654411
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 299282
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 17846
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1215",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 30,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 349693
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 87932
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 8525
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1230",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 290063
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 65689
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 8801
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1230",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 30,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 1359122
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 282051
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 35236
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1230",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 290063
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 65689
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 8801
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1230",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 30,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 1359122
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 282051
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 35236
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1245",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 16,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 312968
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 67193
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 14641
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1245",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 885204
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 180850
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 27608
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1245",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 16,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 312968
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 67193
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 14641
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "1245",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 25,
+                    "countersValues": [
+                        {
+                            "counter": "pmPdcpVolDlDrb",
+                            "value": 885204
+                        },
+                        {
+                            "counter": "pmPdcpVolDlDrbLastTTI",
+                            "value": 180850
+                        },
+                        {
+                            "counter": "pmUeThpTimeDl",
+                            "value": 27608
+                        }
+                    ]
+                }
+            ]
+        }
