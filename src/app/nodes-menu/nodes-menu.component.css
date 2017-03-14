@@ -1,0 +1,11 @@
+md-input-container {
+    width: 98%;
+    margin: 0 8px;
+}
+
+.close {
+    cursor: pointer;
+	position: absolute;
+	top: 5%;
+	right: 5%;
+}

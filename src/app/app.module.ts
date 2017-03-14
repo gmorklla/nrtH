@@ -14,6 +14,7 @@ import { Ng2PaginationModule } from 'ng2-pagination';
 import 'hammerjs';
 import { SearchPipePipe } from './search-pipe.pipe';
 import { NodeGraphDialogComponent } from './node-graph-dialog/node-graph-dialog.component';
+import { NodesMenuComponent } from './nodes-menu/nodes-menu.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,14 @@ import { NodeGraphDialogComponent } from './node-graph-dialog/node-graph-dialog.
     NavbarComponent,
     DashboardComponent,
     SearchPipePipe,
-    NodeGraphDialogComponent
+    NodeGraphDialogComponent,
+    NodesMenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
+    MaterialModule.forRoot(),
     Ng2PaginationModule
   ],
   entryComponents: [NodeGraphDialogComponent],

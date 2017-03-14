@@ -1,9 +1,10 @@
 <app-navbar (openSideNav)="openIt()"></app-navbar>
-<md-sidenav-container>
+<md-sidenav-container [class.m2app-dark]="isDarkTheme">
 	<md-sidenav mode="side" #sidenav opened="true">
 		<app-sidebar (emitOss)="emittedOss($event)"></app-sidebar>
 	</md-sidenav>
 	<div class="my-content">
-		<app-dashboard [ossId]="ossEmitted"></app-dashboard>
+		<app-dashboard></app-dashboard>
+		<app-nodes-menu [ossId]="ossEmitted"></app-nodes-menu>
 	</div>
 </md-sidenav-container>

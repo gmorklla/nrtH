@@ -31,3 +31,9 @@ md-sidenav {
 .my-content {
     padding: 10px 35px;
 }
+
+app-nodes-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

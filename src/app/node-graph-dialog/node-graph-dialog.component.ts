@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { MdDialogRef } from '@angular/material';
-import { $WebSocket } from 'angular2-websocket/angular2-websocket';
+// import { $WebSocket } from 'angular2-websocket/angular2-websocket';
 import * as c3 from 'c3';
 import * as d3 from 'd3';
 
@@ -20,7 +20,7 @@ export class NodeGraphDialogComponent implements OnInit {
 	}
 	ancho: number;
 	@ViewChild('webSocketDisplay') webSocketDisplay;
-	ws;
+	// ws;
 
 	constructor(public dialogRef: MdDialogRef<NodeGraphDialogComponent>) {
 		console.log('data', this.dialogRef.config.data);
@@ -74,38 +74,36 @@ export class NodeGraphDialogComponent implements OnInit {
 
 		this.updateData(this.chart);
 
-		this.ws = new $WebSocket("ws://echo.websocket.org/");
+		// this.ws = new $WebSocket("ws://echo.websocket.org/");
 
-		console.info(this.ws);
+		// console.info(this.ws);
 
+		// // set received message stream
+		// this.ws.getDataStream().subscribe(
+		// 	(msg) => {
+		// 		console.log("next", msg.data);
+		// 		this.ws.close(false);
+		// 	},
+		// 	(msg) => {
+		// 		console.log("error", msg);
+		// 	},
+		// 	() => {
+		// 		console.log("complete");
+		// 	}
+		// );
 
-
-		// set received message stream
-		this.ws.getDataStream().subscribe(
-			(msg) => {
-				console.log("next", msg.data);
-				this.ws.close(false);
-			},
-			(msg) => {
-				console.log("error", msg);
-			},
-			() => {
-				console.log("complete");
-			}
-		);
-
-		// send with default send mode (now default send mode is Observer)
-		this.ws.send("some thing").subscribe(
-			(msg) => {
-				console.log("next", msg.data);
-			},
-			(msg) => {
-				console.log("error", msg);
-			},
-			() => {
-				console.log("complete");
-			}
-		);
+		// // send with default send mode (now default send mode is Observer)
+		// this.ws.send("some thing").subscribe(
+		// 	(msg) => {
+		// 		console.log("next", msg.data);
+		// 	},
+		// 	(msg) => {
+		// 		console.log("error", msg);
+		// 	},
+		// 	() => {
+		// 		console.log("complete");
+		// 	}
+		// );
 
 	}
 

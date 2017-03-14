@@ -1,6 +1,4 @@
-import { Component, OnInit, Inject, Input, HostListener } from '@angular/core';
-import { MdDialog } from '@angular/material';
-import { NodeGraphDialogComponent } from '../node-graph-dialog/node-graph-dialog.component';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app-dashboard',
@@ -9,27 +7,9 @@ import { NodeGraphDialogComponent } from '../node-graph-dialog/node-graph-dialog
 })
 export class DashboardComponent implements OnInit {
 
-	@Input() ossId;
-	name: string = '';
-	supplier: string = '';
-	@HostListener('window:resize', ['$event']) onResize(event) {
-		this.ancho = (event.target.innerWidth) + 'px';
-	}
-	ancho: string;
-
-	constructor(public dialog: MdDialog) { }
+	constructor() { }
 
 	ngOnInit() {
-		this.ancho = (window.innerWidth) + 'px';
-	}
-
-	openDialog(node) {
-		this.dialog.open(NodeGraphDialogComponent, {
-			width: this.ancho,
-			data: {
-				node: node
-			}
-		});
 	}
 
 }

@@ -21,6 +21,7 @@
         "styles.css",
         "animate.css",
         "../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css",
+        "./assets/scss/custom-theme.scss",
         "../node_modules/c3/c3.css"
       ],
       "scripts": [],

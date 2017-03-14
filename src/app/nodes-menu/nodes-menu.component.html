@@ -1,0 +1,30 @@
+<md-card class="animated" *ngIf="ossId" [ngClass]="aparece ? 'fadeInLeft' : 'fadeOutLeft'">
+    <md-card-header>
+        <md-card-title>
+        	<span class="titulo">
+        		<md-icon>place</md-icon> {{ossId[1] | uppercase}} | {{ossId[0].name}} | {{ossId[0].supplier}}
+        	</span>
+        	<span class="close">
+        		<md-icon class="close" [color]="'accent'" (click)="closeNodesMenu()">close</md-icon>
+        	</span>
+        </md-card-title>
+    </md-card-header>
+    <span *ngIf="!ossId">Elige un Oss</span>
+    <div *ngIf="ossId">
+	    <md-input-container class="example-full-width">
+	        <textarea mdInput placeholder="Buscar" [(ngModel)]="search"></textarea>
+	    </md-input-container>
+	    <md-list>
+	        <h3 md-subheader>Nodos</h3>
+	        <md-list-item *ngFor="let node of ossId[0].targetNodes | searchPipe:'name':search | paginate: { itemsPerPage: 5, currentPage: p }">
+	            <md-icon md-list-avatar [color]="'red'">wifi_tethering</md-icon>
+	            <h4 md-line>{{node.name}}</h4>
+	            <p md-line>{{node.ipAddress}}</p>
+	            <button md-mini-fab [color]="'accent'" (click)="openDialog(node)">
+	                <md-icon>visibility</md-icon>
+	            </button>
+	        </md-list-item>
+	        <pagination-controls (pageChange)="p = $event" class="miPaginacion" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+	    </md-list>
+	</div>
+</md-card>
