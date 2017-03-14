@@ -1,6 +1,8 @@
-import { Component, OnInit, Inject, Input, HostListener, OnChanges } from '@angular/core';
+import { Component, OnInit, Inject, Input, HostListener, OnChanges, ViewChildren, ViewChild } from '@angular/core';
 import { MdDialog } from '@angular/material';
+import { MdMenuTrigger } from '@angular/material'
 import { NodeGraphDialogComponent } from '../node-graph-dialog/node-graph-dialog.component';
+import { HttpGetServiceService } from '../shared/services/http-get-service.service';
 
 @Component({
   selector: 'app-nodes-menu',
@@ -17,15 +19,17 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	}
 	ancho: string;
 	aparece: boolean;
+	mo;
+	nodoActual = [];
+	@ViewChild(MdMenuTrigger) trigger: MdMenuTrigger;
 
-	constructor(public dialog: MdDialog) { }
+	constructor(public dialog: MdDialog, private http: HttpGetServiceService) { }
 
 	ngOnInit() {
 		this.ancho = (window.innerWidth) + 'px';
 	}
 
 	ngOnChanges() {
-		console.log("Ahora");
 		if(this.ossId != null) {
 			this.aparece = true;
 		} else {
@@ -47,6 +51,20 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 		setTimeout(function () {
 			this.ossId = null;
 		}, 1000);
+	}
+
+	getMoList(nodo, e) {
+		this.nodoActual = [];
+    	let neId = nodo;
+
+    	this.http.getMo(neId).subscribe(
+    	  result => {
+    	    this.mo = result.moidList[0].moidName;
+    	    this.nodoActual[neId] = true;
+    	    ;
+    	  },
+    	  error => console.error(error)
+    	);
 	}
 
 }

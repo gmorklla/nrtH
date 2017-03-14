@@ -9,3 +9,12 @@ md-input-container {
 	top: 5%;
 	right: 5%;
 }
+
+h4 {
+	width: 115px;
+}
+
+.getMoBtn {
+	width: 115px;
+	margin-left: 10px;
+}
