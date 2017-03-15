@@ -14,3 +14,7 @@ md-sidenav-container {
 	max-width: 100vw !important;
 	border-radius: 0 !important;
 }
+
+.nodeMenuPagination .ng2-pagination {
+	padding-left: 0 !important;
+}

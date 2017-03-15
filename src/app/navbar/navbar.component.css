@@ -14,3 +14,8 @@ img {
 .menu {
 	margin-left: 40px;
 }
+
+md-toolbar {
+    background-color: black;
+    color: white;
+}

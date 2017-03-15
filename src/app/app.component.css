@@ -19,13 +19,14 @@ app-navbar {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 10;    
 }
 
 md-sidenav {
     width: 200px;
     padding: 10px;
-    background-color: white;
+    background-color: whitesmoke;
+    border-right: 1px solid #ccc;
 }
 
 .my-content {

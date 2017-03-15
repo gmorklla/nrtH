@@ -3,6 +3,14 @@ md-input-container {
     margin: 0 8px;
 }
 
+md-progress-bar {
+    width: 98%;
+    margin: 5px 1%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .close {
     cursor: pointer;
 	position: absolute;
@@ -12,9 +20,9 @@ md-input-container {
 
 h4 {
 	width: 115px;
+	flex: 1 1 auto;
 }
 
 .getMoBtn {
-	width: 115px;
-	margin-left: 10px;
+	cursor: pointer !important;
 }
