@@ -1,7 +1,23 @@
-<md-card>
+<md-icon md-line>dashboard</md-icon> Dashboard
+<hr>
+<md-card *ngIf="nodeData">
     <md-card-header>
         <md-card-title>
-            <md-icon>dashboard</md-icon> Dashboard</md-card-title>
+            <md-icon md-list-avatar [color]="'primary'">wifi_tethering</md-icon> {{nodeData[1].nodeId}}
+        </md-card-title>
+        <md-card-subtitle>
+            {{nodeData[0] | uppercase}}
+        </md-card-subtitle>
     </md-card-header>
-    <span>Contenido de dashboard</span>
+    <md-card-content>
+        <form>
+            <section class="example-section">
+                <label class="example-margin">Mo:</label>
+                <md-radio-group name="radio_options" [(ngModel)]="radioGroupValue">
+                    <md-radio-button name="radio_options" class="example-margin" *ngFor="let mo of nodeData[2].moidList" [value]="mo.value">{{mo.moidName}}</md-radio-button>
+                    <md-radio-button name="radio_options" class="example-margin" [value]="algo">Algo</md-radio-button>
+                </md-radio-group>
+            </section>
+        </form>
+    </md-card-content>
 </md-card>

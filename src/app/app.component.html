@@ -4,7 +4,7 @@
 		<app-sidebar (emitOss)="emittedOss($event)"></app-sidebar>
 	</md-sidenav>
 	<div class="my-content">
-		<app-dashboard></app-dashboard>
-		<app-nodes-menu [ossId]="ossEmitted"></app-nodes-menu>
+		<app-dashboard [nodeData]="nodeDataEmitted"></app-dashboard>
+		<app-nodes-menu [ossId]="ossEmitted" (emitNodeData)="emittedNodeData($event)"></app-nodes-menu>
 	</div>
 </md-sidenav-container>

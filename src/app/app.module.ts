@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ApiService } from './api.service';
+import { ApiService } from './shared/services/api.service';
 import { HttpGetServiceService } from './shared/services/http-get-service.service';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import 'hammerjs';

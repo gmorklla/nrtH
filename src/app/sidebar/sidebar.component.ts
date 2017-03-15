@@ -26,24 +26,6 @@ export class SidebarComponent implements OnInit {
         this.processData();
       },
       error => console.error(error));
-
-    // let neId            = '011915L2100';
-    // let moid            = '011915001';
-    // let ossId           = 'ixt4gr9a';
-    // let latest          = true;
-    // let startDate       = 20170213;
-    // let startTime       = 1005;
-    // let endDate         = 20170213;
-    // let endTime         = 1105;
-
-    // let data: HttpGetKpis = new HttpGetKpis(neId, moid, ossId, latest, startDate, startTime, endDate, endTime);
-
-    // this.http.getKpis(data).subscribe(
-    //   result => {
-    //     console.info(result);
-    //   },
-    //   error => console.error(error)
-    // );
   }
 
   processData() {

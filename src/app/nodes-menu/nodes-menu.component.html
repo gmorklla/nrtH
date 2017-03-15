@@ -2,7 +2,7 @@
     <md-card-header>
         <md-card-title>
             <span class="titulo">
-        		<md-icon>place</md-icon> {{ossId[1] | uppercase}} | {{ossId[0].nodeId}} | {{ossId[0].supplier}}
+        		<md-icon>place</md-icon> {{ossId[1] | uppercase}} | {{ossId[0].supplier}}
         	</span>
             <span class="close">
         		<md-icon class="close" [color]="'accent'" (click)="closeNodesMenu()">close</md-icon>
@@ -16,12 +16,11 @@
         </md-input-container>
         <md-list>
             <h3 md-subheader>Nodos</h3>
+            <md-progress-bar md-line mode="indeterminate" *ngIf="loading"></md-progress-bar>
             <md-list-item *ngFor="let node of ossId[0].targetNodes | searchPipe:'name':search | paginate: { itemsPerPage: 5, currentPage: p }">
-                <md-icon md-list-avatar [color]="'red'">wifi_tethering</md-icon>
-                <md-progress-bar md-line mode="indeterminate"></md-progress-bar>
+                <md-icon md-list-avatar [color]="'primary'">wifi_tethering</md-icon>
                 <h4 md-line>{{node.nodeId}}</h4>
-                <button md-line class="getMoBtn" md-raised-button [color]="'warn'" (click)="getMoList(node.nodeId, $event)">Obtener Mo</button>
-                <p md-line *ngIf="nodoActual[node.nodeId] == true">{{mo}}</p>
+                <button md-line class="getMoBtn" md-raised-button [color]="'warn'" (click)="getMoList(node, $event)">Obtener Mo</button>
                 <!-- 	            <button md-mini-fab [color]="'accent'" (click)="openDialog(node)">
 	                <md-icon>visibility</md-icon>
 	            </button> -->

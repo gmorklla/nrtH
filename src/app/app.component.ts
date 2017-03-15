@@ -8,6 +8,7 @@ import { Component, ViewChild } from '@angular/core';
 export class AppComponent {
 	title = 'app works!';
 	ossEmitted;
+  nodeDataEmitted;
 	@ViewChild('sidenav') sidenav;
 	openIt() {
   		this.sidenav.toggle();
@@ -15,4 +16,7 @@ export class AppComponent {
   	emittedOss(x) {
   		this.ossEmitted = x;
   	}
+    emittedNodeData(x) {
+      this.nodeDataEmitted = x;
+    }
 }

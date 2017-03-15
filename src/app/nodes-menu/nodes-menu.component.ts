@@ -1,13 +1,14 @@
-import { Component, OnInit, Inject, Input, HostListener, OnChanges, ViewChildren, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject, Input, HostListener, OnChanges, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MdDialog } from '@angular/material';
-import { MdMenuTrigger } from '@angular/material'
+import { MdProgressBar } from '@angular/material';
 import { NodeGraphDialogComponent } from '../node-graph-dialog/node-graph-dialog.component';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
+import { HttpGetKpis } from '../shared/classes/http-get-kpis';
 
 @Component({
-  selector: 'app-nodes-menu',
-  templateUrl: './nodes-menu.component.html',
-  styleUrls: ['./nodes-menu.component.css']
+	selector: 'app-nodes-menu',
+	templateUrl: './nodes-menu.component.html',
+	styleUrls: ['./nodes-menu.component.css']
 })
 export class NodesMenuComponent implements OnInit, OnChanges {
 
@@ -19,9 +20,10 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	}
 	ancho: string;
 	aparece: boolean;
-	mo;
-	nodoActual = [];
-	@ViewChild(MdMenuTrigger) trigger: MdMenuTrigger;
+	mo:Array<Object>;
+	loading: boolean = false;
+	@ViewChild(MdProgressBar) progressBar: MdProgressBar;
+	@Output() emitNodeData = new EventEmitter<any>();
 
 	constructor(public dialog: MdDialog, private http: HttpGetServiceService) { }
 
@@ -30,7 +32,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges() {
-		if(this.ossId != null) {
+		if (this.ossId != null) {
 			this.aparece = true;
 		} else {
 			this.aparece = false;
@@ -48,23 +50,57 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 
 	closeNodesMenu() {
 		this.aparece = false;
-		setTimeout(function () {
+		setTimeout(function() {
 			this.ossId = null;
 		}, 1000);
 	}
 
 	getMoList(nodo, e) {
-		this.nodoActual = [];
-    	let neId = nodo;
+		this.loading = true;
+		let neId = nodo.nodeId;
 
-    	this.http.getMo(neId).subscribe(
-    	  result => {
-    	    this.mo = result.moidList[0].moidName;
-    	    this.nodoActual[neId] = true;
-    	    ;
-    	  },
-    	  error => console.error(error)
-    	);
+		this.http.getMo(neId).subscribe(
+			result => {
+				this.mo = result;
+				this.loading = false;
+				this.setNodeData(nodo);
+			},
+			error => console.error(error)
+		);
+	}
+
+	// getKpis(nodo) {
+
+	// 	console.log(nodo);
+	// 	this.progressBar.color = 'accent';
+	// 	let indice = this.mo.indexOf("=") + 1;
+	// 	let mo = this.mo.slice(indice);
+
+	// 	let neId = nodo.nodeId;
+	// 	let moid = mo;
+	// 	let ossId = nodo.ossId;
+	// 	let latest = true;
+	// 	let startDate = 20170213;
+	// 	let startTime = 1005;
+	// 	let endDate = 20170213;
+	// 	let endTime = 1105;
+
+	// 	let data: HttpGetKpis = new HttpGetKpis(neId, moid, ossId, latest, startDate, startTime, endDate, endTime);
+
+	// 	this.http.getKpis(data).subscribe(
+	// 		result => {
+	// 			console.info(result);
+	// 		},
+	// 		error => console.error(error)
+	// 	);
+
+	// }
+
+	setNodeData(nodo) {
+		var dataEmitted = [this.ossId[1], nodo, this.mo];
+		this.emitNodeData.emit(dataEmitted);
+		this.closeNodesMenu();
+		this.ossId = null;
 	}
 
 }
