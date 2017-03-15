@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, URLSearchParams, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { ApiService } from '../../api.service';
+import { ApiService } from './api.service';
 import { HttpGetKpis } from '../classes/http-get-kpis';
 
 // Import RxJs required methods
