@@ -50,9 +50,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 
 	closeNodesMenu() {
 		this.aparece = false;
-		setTimeout(function() {
-			this.ossId = null;
-		}, 1000);
+		this.ossId = null;
 	}
 
 	getMoList(nodo, e) {

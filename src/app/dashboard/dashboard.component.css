@@ -1,3 +1,22 @@
 .example-margin {
     margin: 0 10px;
 }
+
+label.example-margin {
+	margin-bottom: 10px;
+	display: block;
+    border-bottom: solid 5px black;
+}
+
+md-radio-group {
+	display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+md-card-header {
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+}
