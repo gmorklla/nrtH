@@ -9,13 +9,45 @@
 
 img {
 	max-height: 60%;
+	background-color: white;
+	margin: auto;
+
 }
 
 .menu {
-	margin-left: 40px;
+	margin-left: 10px;
 }
 
 md-toolbar {
     background-color: black;
     color: white;
+    padding: 0;
+}
+
+.logoNRT {
+	background-color: white;
+	height: 100%;
+	width: 236px;
+	margin-left: -16px;
+	display: flex;
+}
+
+.logoTelcel {
+	width: 236px;
+	height: 100%;
+	margin-left: -16px;
+	text-align: center;
+	background-color: black;
+	display: flex;
+}
+
+.logoTelcel img {
+	background-color: transparent;
+	width: 60%;
+	margin: auto;
+}
+
+md-toolbar-row {
+	background-color: #fafafa;
+	color:black;
 }

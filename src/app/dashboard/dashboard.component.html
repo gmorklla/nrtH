@@ -3,15 +3,18 @@
 <md-card *ngIf="nodeData">
     <md-card-header>
         <md-card-title>
-            <md-icon md-list-avatar [color]="'primary'">wifi_tethering</md-icon> Nodo: {{nodeData[1].nodeId}} | {{nodeData[0] | uppercase}}
+            <md-icon md-list-avatar [color]="'primary'">wifi_tethering</md-icon> Nodo: {{nodeData[1]}} | {{nodeData[0] | uppercase}}
         </md-card-title>
     </md-card-header>
     <md-card-content>
         <form>
             <section class="example-section">
                 <label class="example-margin"><md-icon>dns</md-icon> Mo:</label>
-                <md-radio-group name="radio_options" [(ngModel)]="radioGroupValue">
+<!--                 <md-radio-group name="radio_options" [(ngModel)]="radioGroupValue">
                     <md-radio-button name="radio_options" class="example-margin" *ngFor="let mo of nodeData[2].moidList" [value]="mo.moidName">{{mo.moidName}}</md-radio-button>
+                </md-radio-group> -->
+                <md-radio-group name="radio_options" [(ngModel)]="radioGroupValue">
+                    <md-radio-button name="radio_options" class="example-margin" [value]="nodeData[2]">{{nodeData[2]}}</md-radio-button>
                 </md-radio-group>
             </section>
         </form>

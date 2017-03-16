@@ -10,6 +10,9 @@ export class AppComponent {
 	ossEmitted;
   nodeDataEmitted;
 	@ViewChild('sidenav') sidenav;
+
+  constructor() {}
+
 	openIt() {
   		this.sidenav.toggle();
   	}

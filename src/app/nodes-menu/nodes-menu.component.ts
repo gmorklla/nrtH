@@ -20,15 +20,17 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	}
 	ancho: string;
 	aparece: boolean;
-	mo:Array<Object>;
+	mo: Array<Object>;
 	loading: boolean = false;
 	@ViewChild(MdProgressBar) progressBar: MdProgressBar;
 	@Output() emitNodeData = new EventEmitter<any>();
+	nodosActuales = [];
 
 	constructor(public dialog: MdDialog, private http: HttpGetServiceService) { }
 
 	ngOnInit() {
 		this.ancho = (window.innerWidth) + 'px';
+		this.procesar(JSON.parse(localStorage.getItem("data")));
 	}
 
 	ngOnChanges() {
@@ -53,18 +55,20 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 		this.ossId = null;
 	}
 
-	getMoList(nodo, e) {
+	getMoList(nodo) {
 		this.loading = true;
 		let neId = nodo.nodeId;
+		this.setNodeData(nodo);
 
-		this.http.getMo(neId).subscribe(
-			result => {
-				this.mo = result;
-				this.loading = false;
-				this.setNodeData(nodo);
-			},
-			error => console.error(error)
-		);
+		// this.http.getMo(neId).subscribe(
+		// 	result => {
+		// 		this.mo = result;
+		// 		this.loading = false;
+		// 		console.log(nodo);
+		// 		this.setNodeData(nodo);
+		// 	},
+		// 	error => console.error(error)
+		// );
 	}
 
 	// getKpis(nodo) {
@@ -95,10 +99,29 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	// }
 
 	setNodeData(nodo) {
-		var dataEmitted = [this.ossId[1], nodo, this.mo];
+		// var dataEmitted = [this.ossId[1], nodo, this.mo];
+		var dataEmitted = [this.ossId[1], nodo.nodeId, nodo.moId];
 		this.emitNodeData.emit(dataEmitted);
 		this.closeNodesMenu();
 		this.ossId = null;
+	}
+
+	procesar(x) {
+		for (var i = 0; i < x.length; ++i) {
+			var obj = {
+				nodeId: '',
+				moId: ''
+			};
+			var str = x[i];
+			var indice = str.indexOf(':');
+			var node = str.slice(0, indice);
+			var indice2 = str.indexOf('D=') + 2;
+			var mo = str.slice(indice2);
+			obj.nodeId = node;
+			obj.moId = mo;
+			this.nodosActuales.push(obj);
+		}
+		console.log(this.nodosActuales);
 	}
 
 }

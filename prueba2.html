@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "GT7880L2100:ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=117880001";
+		var indice = str.indexOf(':');
+		var node = str.slice(0, indice);
+		console.log(node);
+		var indice2 = str.indexOf('D=') + 2;
+		var mo = str.slice(indice2);
+		console.log(mo);
+	</script>
+</body>
+</html>

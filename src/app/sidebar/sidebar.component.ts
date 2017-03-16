@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
 import { HttpGetKpis } from '../shared/classes/http-get-kpis';
+import { GetNodeMoListService } from '../shared/services/get-node-mo-list.service';
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,7 +14,7 @@ export class SidebarComponent implements OnInit {
   regiones: { nombre: string, oss }[] = [];
   @Output() emitOss = new EventEmitter<any>();
 
-  constructor(private http: HttpGetServiceService) { }
+  constructor(private http: HttpGetServiceService, private dataNodeMo: GetNodeMoListService) { }
 
   ngOnInit() {
     this.gettingData();

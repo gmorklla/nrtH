@@ -18,3 +18,7 @@ md-sidenav-container {
 .nodeMenuPagination .ng2-pagination {
 	padding-left: 0 !important;
 }
+
+app-nodes-menu {
+	z-index: 30;
+}

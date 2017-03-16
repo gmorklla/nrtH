@@ -1,23 +1,29 @@
 <md-toolbar color="'primary'">
-	<img src="./assets/img/telcel.svg">
-	<button class="menu" md-icon-button (click)="openNavFn()">
-	    <md-icon>menu</md-icon>
-	</button>
+    <div class="logoNRT">
+        <img src="./assets/img/nrtmonitoring.svg">
+    </div>
     <span class="example-spacer"></span>
-    <button md-button [color]="'white'"><md-icon>wifi_tethering</md-icon> Monitored nodes</button>
+    <button md-button [color]="'white'">
+        <md-icon>wifi_tethering</md-icon> Monitored nodes</button>
     <button md-button [color]="'white'" [mdMenuTriggerFor]="intelmaMenu">Intelma</button>
-
-	<md-menu #intelmaMenu="mdMenu">    
-	    <button md-menu-item routerLink="/inicio" routerLinkActive="active">
-	        <md-icon>face</md-icon>
-	        <span>Profile</span>
-	    </button>
-	    <button md-menu-item routerLink="/polls" routerLinkActive="active">
-	        <md-icon>exit_to_app</md-icon>
-	        <span>Log out</span>
-	    </button>
-	</md-menu>
-
-    <button md-button [color]="'white'">English</button>	
-    <button md-button [color]="'white'"><md-icon>settings</md-icon></button>	
+    <md-menu #intelmaMenu="mdMenu">
+        <button md-menu-item routerLink="/inicio" routerLinkActive="active">
+            <md-icon>face</md-icon>
+            <span>Profile</span>
+        </button>
+        <button md-menu-item routerLink="/polls" routerLinkActive="active">
+            <md-icon>exit_to_app</md-icon>
+            <span>Log out</span>
+        </button>
+    </md-menu>
+    <button md-button [color]="'white'">English</button>
+    <button md-button [color]="'white'">
+        <md-icon>settings</md-icon>
+    </button>
+    <md-toolbar-row>
+        <span class="logoTelcel"><img src="./assets/img/telcel.svg"></span>
+        <button class="menu" md-icon-button (click)="openNavFn()">
+            <md-icon [color]="'primary'">menu</md-icon>
+        </button>
+    </md-toolbar-row>
 </md-toolbar>
