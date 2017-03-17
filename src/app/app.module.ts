@@ -12,11 +12,15 @@ import { ApiService } from './shared/services/api.service';
 import { GetNodeMoListService } from './shared/services/get-node-mo-list.service';
 import { HttpGetServiceService } from './shared/services/http-get-service.service';
 import { Ng2PaginationModule } from 'ng2-pagination';
+import { Md2Module }  from 'md2';
+import { LOCALE_ID } from '@angular/core';
 import 'hammerjs';
 import 'underscore';
 import { SearchPipePipe } from './search-pipe.pipe';
 import { NodeGraphDialogComponent } from './node-graph-dialog/node-graph-dialog.component';
 import { NodesMenuComponent } from './nodes-menu/nodes-menu.component';
+import { TempComponent } from './temp/temp.component';
+import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component';
 
 @NgModule({
   declarations: [
@@ -26,17 +30,20 @@ import { NodesMenuComponent } from './nodes-menu/nodes-menu.component';
     DashboardComponent,
     SearchPipePipe,
     NodeGraphDialogComponent,
-    NodesMenuComponent
+    NodesMenuComponent,
+    TempComponent,
+    GaugeChartComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    Ng2PaginationModule
+    Ng2PaginationModule,
+    Md2Module.forRoot()
   ],
   entryComponents: [NodeGraphDialogComponent],
-  providers: [ApiService, HttpGetServiceService, GetNodeMoListService],
+  providers: [ApiService, HttpGetServiceService, GetNodeMoListService, { provide: LOCALE_ID, useValue: "es-MX" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

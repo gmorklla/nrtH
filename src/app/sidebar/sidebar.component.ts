@@ -13,6 +13,11 @@ export class SidebarComponent implements OnInit {
   data;
   regiones: { nombre: string, oss }[] = [];
   @Output() emitOss = new EventEmitter<any>();
+  @Output() openSideNav = new EventEmitter<any>();
+
+  openNavFn() {
+    this.openSideNav.emit('Abre!');
+  }  
 
   constructor(private http: HttpGetServiceService, private dataNodeMo: GetNodeMoListService) { }
 

@@ -1,0 +1,42 @@
+<div class="flex-container">
+    <md2-datepicker [(ngModel)]="startTime" type="datetime" [disabled]="activo"></md2-datepicker>
+    <md2-datepicker [(ngModel)]="finalTime" type="datetime" [disabled]="activo"></md2-datepicker>
+    <md-slide-toggle class="example-margin" [color]="'accent'" [checked]="checked" [disabled]="disabled" [(ngModel)]="ultima" (change)="ultimaChange()">
+        Últimos datos
+    </md-slide-toggle>
+    <button md-raised-button>Obtener Kpis</button>
+</div>
+
+<md-progress-bar md-line mode="indeterminate"></md-progress-bar>
+
+<div class="flex-container">
+    <app-gauge-chart [data]="70"
+    				 [id]="'kpi1'" 
+    				 [title]="'Accessibility'">				 
+    </app-gauge-chart>
+    <app-gauge-chart [data]="100" 
+                     [id]="'kpi2'"
+                     [title]="'Availability'">                 
+    </app-gauge-chart>
+    <app-gauge-chart [data]="45" 
+                     [id]="'kpi3'"
+                     [title]="'Latency'">                 
+    </app-gauge-chart>
+    <app-gauge-chart [data]="85" 
+                     [id]="'kpi4'"
+                     [title]="'Retainability'">                 
+    </app-gauge-chart>
+    <app-gauge-chart [data]="95" 
+                     [id]="'kpi5'"
+                     [title]="'Rrcfail'">                 
+    </app-gauge-chart>
+    <app-gauge-chart [data]="60" 
+                     [id]="'kpi6'"
+                     [title]="'Througput'">                 
+    </app-gauge-chart>
+</div>
+
+<md-tab-group>
+  <md-tab label="Table data">Content 1</md-tab>
+  <md-tab label="Graph">Content 2</md-tab>
+</md-tab-group>

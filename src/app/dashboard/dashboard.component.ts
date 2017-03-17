@@ -10,6 +10,13 @@ export class DashboardComponent implements OnInit, OnChanges {
 	@Input() nodeData;
 	radioGroupValue;
 
+	startTime;
+	finalTime;
+	checked: boolean = false;
+	disabled: boolean = false;
+	activo: boolean = false;
+	ultima;
+
 	constructor() { }
 
 	ngOnInit() {
@@ -20,6 +27,15 @@ export class DashboardComponent implements OnInit, OnChanges {
 			console.log(this.nodeData);
 		}
 		
+	}
+
+	ultimaChange() {
+		console.log(this.ultima);
+		if(this.ultima) {
+			this.activo = true;
+		} else {
+			this.activo = false;
+		}
 	}
 
 }

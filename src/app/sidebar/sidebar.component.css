@@ -28,3 +28,30 @@ md-select {
 img {
     width: 60%;
 }
+
+.logoTelcel {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: black;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.logoTelcel img {
+    background-color: transparent;
+    width: 60%;
+    margin: auto;
+}
+
+.logoTelcel button {
+    width: 40%;
+    margin:auto;
+}
+
+form {
+    margin-top: 70px;
+}

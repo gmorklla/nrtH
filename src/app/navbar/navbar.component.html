@@ -2,6 +2,9 @@
     <div class="logoNRT">
         <img src="./assets/img/nrtmonitoring.svg">
     </div>
+    <button class="menu" md-icon-button (click)="openNavFn()">
+        <md-icon [color]="'primary'">menu</md-icon>
+    </button>
     <span class="example-spacer"></span>
     <button md-button [color]="'white'">
         <md-icon>wifi_tethering</md-icon> Monitored nodes</button>
@@ -20,12 +23,4 @@
     <button md-button [color]="'white'">
         <md-icon>settings</md-icon>
     </button>
-    <md-toolbar-row>
-        <span class="logoTelcel">
-            <img src="./assets/img/telcel.svg">
-            <button class="menu" md-icon-button (click)="openNavFn()">
-                <md-icon [color]="'primary'">menu</md-icon>
-            </button>
-        </span>
-    </md-toolbar-row>
 </md-toolbar>

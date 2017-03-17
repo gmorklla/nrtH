@@ -1,19 +1,20 @@
+
 <nav>
-	<br>
-	<br>
-	<br>
-	<br>
+    <span class="logoTelcel">
+        <img src="./assets/img/telcel.svg">
+<!--         <button class="menu" md-icon-button (click)="openNavFn()">
+            <md-icon [color]="'primary'">menu</md-icon>
+        </button> -->
+    </span>
     <form action="">
-	    <ul>
-	        <li *ngFor="let region of regiones">
-
-				<md-select placeholder="{{region.nombre}}" [(ngModel)]="region.selected" name="{{region.nombre}}">
-					<md-option *ngFor="let item of region.oss" [value]="item.name" (onSelect)="setOss(item, region.nombre)">
-					  {{item.name}}
-					</md-option>
-				</md-select>
-
-	        </li>
-	    </ul>
-	</form>
+        <ul>
+            <li *ngFor="let region of regiones">
+                <md-select placeholder="{{region.nombre}}" [(ngModel)]="region.selected" name="{{region.nombre}}">
+                    <md-option *ngFor="let item of region.oss" [value]="item.name" (onSelect)="setOss(item, region.nombre)">
+                        {{item.name}}
+                    </md-option>
+                </md-select>
+            </li>
+        </ul>
+    </form>
 </nav>

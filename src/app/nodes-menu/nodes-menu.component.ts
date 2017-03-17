@@ -71,33 +71,6 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 		// );
 	}
 
-	// getKpis(nodo) {
-
-	// 	console.log(nodo);
-	// 	this.progressBar.color = 'accent';
-	// 	let indice = this.mo.indexOf("=") + 1;
-	// 	let mo = this.mo.slice(indice);
-
-	// 	let neId = nodo.nodeId;
-	// 	let moid = mo;
-	// 	let ossId = nodo.ossId;
-	// 	let latest = true;
-	// 	let startDate = 20170213;
-	// 	let startTime = 1005;
-	// 	let endDate = 20170213;
-	// 	let endTime = 1105;
-
-	// 	let data: HttpGetKpis = new HttpGetKpis(neId, moid, ossId, latest, startDate, startTime, endDate, endTime);
-
-	// 	this.http.getKpis(data).subscribe(
-	// 		result => {
-	// 			console.info(result);
-	// 		},
-	// 		error => console.error(error)
-	// 	);
-
-	// }
-
 	setNodeData(nodo) {
 		// var dataEmitted = [this.ossId[1], nodo, this.mo];
 		var dataEmitted = [this.ossId[1], nodo.nodeId, nodo.moId];
