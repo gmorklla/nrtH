@@ -47,6 +47,11 @@ md-toolbar {
 	margin: auto;
 }
 
+.logoTelcel button {
+	width: 40%;
+	margin:auto;
+}
+
 md-toolbar-row {
 	background-color: #fafafa;
 	color:black;
