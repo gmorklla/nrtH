@@ -3,7 +3,7 @@ import { MdDialog } from '@angular/material';
 import { MdProgressBar } from '@angular/material';
 import { NodeGraphDialogComponent } from '../node-graph-dialog/node-graph-dialog.component';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
-import { HttpGetKpis } from '../shared/classes/http-get-kpis';
+import * as _ from 'underscore';
 
 @Component({
 	selector: 'app-nodes-menu',
@@ -56,7 +56,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	}
 
 	getMoList(nodo) {
-		this.loading = true;
+		// this.loading = true;
 		let neId = nodo.nodeId;
 		this.setNodeData(nodo);
 
@@ -73,7 +73,8 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 
 	setNodeData(nodo) {
 		// var dataEmitted = [this.ossId[1], nodo, this.mo];
-		var dataEmitted = [this.ossId[1], nodo.nodeId, nodo.moId];
+		var dataEmitted = [this.ossId[1], nodo.nodeId, nodo[nodo.nodeId]];
+		console.log('dataEmitted:', dataEmitted);
 		this.emitNodeData.emit(dataEmitted);
 		this.closeNodesMenu();
 		this.ossId = null;
@@ -81,18 +82,31 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 
 	procesar(x) {
 		for (var i = 0; i < x.length; ++i) {
-			var obj = {
-				nodeId: '',
-				moId: ''
-			};
+			var obj = {};
+			var agregado = false;
+
 			var str = x[i];
 			var indice = str.indexOf(':');
 			var node = str.slice(0, indice);
 			var indice2 = str.indexOf('D=') + 2;
 			var mo = str.slice(indice2);
-			obj.nodeId = node;
-			obj.moId = mo;
-			this.nodosActuales.push(obj);
+			obj[node] = [];
+			obj[node].push(mo);
+			obj['nodeId'] = node;
+
+			for (var j = 0; j < this.nodosActuales.length; ++j) {
+				if(this.nodosActuales[j][node]) {
+					this.nodosActuales[j][node].push(mo);
+					agregado = true;
+				}
+			}			
+			
+			// obj.nodeId = node;
+			// obj.moId.push(mo);
+			if(agregado == false) {
+				this.nodosActuales.push(obj);
+			}
+			
 		}
 		console.log(this.nodosActuales);
 	}

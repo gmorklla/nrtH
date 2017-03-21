@@ -15,11 +15,10 @@
 }
 
 app-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 10;    
+    position: absolute;
+    top: 0;
+    left: 0; 
 }
 
 md-sidenav {
@@ -30,7 +29,7 @@ md-sidenav {
 }
 
 .my-content {
-    padding: 10px 35px;
+    padding: 0 35px;
 }
 
 app-nodes-menu {

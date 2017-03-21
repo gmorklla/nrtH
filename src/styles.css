@@ -6,10 +6,6 @@ html, body, md-sidenav-container {
 	height: 100%;
 }
 
-md-sidenav-container {
-	margin-top: 64px;
-}
-
 .mat-dialog-container {
 	max-width: 100vw !important;
 	border-radius: 0 !important;

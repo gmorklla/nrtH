@@ -3,7 +3,12 @@ md-card-actions,
 .grafica {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+md-card-header {
+    height: 25px;
 }
 
 md-card-title p {
@@ -19,12 +24,14 @@ md-card {
 
 h3 {
     text-align: center;
-    font-size: 1em;
-    color: black;
+    font-size: large;
+    text-transform: uppercase;
+    color: slategray;
     margin: 0 4px;
     border-radius: 5px;
-    padding: 5px;
-}
+    padding: 5px 20px;
+    background-color: whitesmoke;
+    width: 100%;}
 
 .flex-container {
     display: flex;

@@ -6,13 +6,23 @@
 </head>
 <body>
 	<script>
-		var str = "GT7880L2100:ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=117880001";
-		var indice = str.indexOf(':');
-		var node = str.slice(0, indice);
-		console.log(node);
-		var indice2 = str.indexOf('D=') + 2;
-		var mo = str.slice(indice2);
-		console.log(mo);
+		var str = "Fri Mar 17 2017 18:08:48 GMT-0600 (CST)";
+		var nDate = new Date(str);
+		var dia = formatTwoDigits(nDate.getDate());
+		var mes = formatTwoDigits(nDate.getMonth());
+		var year = nDate.getFullYear();
+		var hora = formatTwoDigits(nDate.getHours());
+		var minutos = formatTwoDigits(nDate.getMinutes());
+
+		function formatTwoDigits(arg) {
+			if (arg < 10) {
+				arg = '0' + arg;
+			}
+			return arg;
+		}
+
+		console.log(dia, mes, year, hora, minutos);
+
 	</script>
 </body>
 </html>

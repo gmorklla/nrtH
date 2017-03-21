@@ -3,13 +3,13 @@
 }
 
 label.example-margin {
-	margin-bottom: 10px;
-	display: block;
+    margin-bottom: 10px;
+    display: block;
     border-bottom: solid 5px black;
 }
 
 md-radio-group {
-	display: flex;
+    display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
 }
@@ -22,18 +22,18 @@ md-card-header {
 }
 
 .example-h2 {
-  margin: 10px;
+    margin: 10px;
 }
 
 .example-section {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  height: 60px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
 }
 
 .example-margin {
-  margin: 10px;
+    margin: 10px;
 }
 
 .flex-container {
@@ -54,7 +54,7 @@ md-card-header {
 }
 
 .flex-container app-gauge-chart {
-    width: 16%;
+    width: 33%;
     margin-bottom: 10px;
     flex: 0 1 auto;
 }
@@ -64,7 +64,18 @@ md-progress-bar {
 }
 
 md-slide-toggle {
-  margin-right: 10%;
+    margin-right: 20% !important;
+}
+
+hr {
+    margin: 25px 0;
+  height: 6px;
+  background: url(./assets/img/hr.png) repeat-x 0 0;
+    border: 0;
+}
+
+h2 {
+    margin-top: 95px;
 }
 
 
@@ -72,9 +83,10 @@ md-slide-toggle {
 
 @media all and (max-width: 1024px) {
     .flex-container app-gauge-chart {
-        width: 25%;
+        width: 33%;
     }
 }
+
 
 /* Small screens */
 
