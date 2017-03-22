@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
 import { HttpGetKpis } from '../shared/classes/http-get-kpis';
 import { GetNodeMoListService } from '../shared/services/get-node-mo-list.service';
-import * as _ from 'underscore';
+import { ErrorSnackService } from '../shared/services/error-snack.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
     this.openSideNav.emit('Abre!');
   }  
 
-  constructor(private http: HttpGetServiceService, private dataNodeMo: GetNodeMoListService) { }
+  constructor(private http: HttpGetServiceService, private dataNodeMo: GetNodeMoListService, private errorSnack: ErrorSnackService) { }
 
   ngOnInit() {
     this.gettingData();
@@ -32,7 +32,10 @@ export class SidebarComponent implements OnInit {
         console.log(this.data);
         this.processData();
       },
-      error => console.error(error));
+      error => {
+        console.error(error);        
+        this.errorSnack.openSnackBar("Error de conexión", "Ok");
+      });
   }
 
   processData() {

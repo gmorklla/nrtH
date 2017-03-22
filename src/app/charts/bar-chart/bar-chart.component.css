@@ -32,7 +32,11 @@ h3 {
     border-radius: 5px;
     padding: 5px 20px;
     background-color: whitesmoke;
-    width: 100%;}
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .flex-container {
     display: flex;

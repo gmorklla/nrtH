@@ -9,8 +9,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApiService } from './shared/services/api.service';
+import { KpiValuesService } from './shared/services/kpi-values.service';
 import { GetNodeMoListService } from './shared/services/get-node-mo-list.service';
 import { HttpGetServiceService } from './shared/services/http-get-service.service';
+import { ErrorSnackService } from './shared/services/error-snack.service';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { Md2Module }  from 'md2';
 import { LOCALE_ID } from '@angular/core';
@@ -21,6 +23,7 @@ import { NodeGraphDialogComponent } from './node-graph-dialog/node-graph-dialog.
 import { NodesMenuComponent } from './nodes-menu/nodes-menu.component';
 import { TempComponent } from './temp/temp.component';
 import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component';
+import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component'
     NodeGraphDialogComponent,
     NodesMenuComponent,
     TempComponent,
-    GaugeChartComponent
+    GaugeChartComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component'
     Md2Module.forRoot()
   ],
   entryComponents: [NodeGraphDialogComponent],
-  providers: [ApiService, HttpGetServiceService, GetNodeMoListService, { provide: LOCALE_ID, useValue: "es-MX" }],
+  providers: [ApiService, HttpGetServiceService, ErrorSnackService, GetNodeMoListService, KpiValuesService, { provide: LOCALE_ID, useValue: "es-MX" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

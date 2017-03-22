@@ -1,15 +1,16 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
 import { HttpGetKpis } from '../shared/classes/http-get-kpis';
+import { KpiValuesService } from '../shared/services/kpi-values.service';
 
 @Component({
 	selector: 'app-dashboard',
 	templateUrl: './dashboard.component.html',
 	styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnChanges {
 
-	@Input() nodeData;
+	@Input() nodeData: any;
 	radioGroupValue;
 
 	startDateTime;
@@ -30,9 +31,17 @@ export class DashboardComponent {
 	rrcfail           = 0;
 	througput         = 0;
 	kpiRequest: HttpGetKpis;
+	kpiInfo;
+	kpiProps: Array<{nombre: number, valor: number}> = [];
 	nodoMoKpisActual;
 
-	constructor(private http: HttpGetServiceService) { }
+	constructor(private http: HttpGetServiceService, private kpiValues: KpiValuesService) { }
+
+	ngOnChanges(changes: SimpleChanges) {		
+		if(changes['nodeData']) {
+			console.log(changes);
+		}
+	}
 
 	ultimaChange() {
 	}
@@ -79,8 +88,8 @@ export class DashboardComponent {
 		this.http.getKpis(this.kpiRequest).subscribe(
 			result => {
 				this.loading = false;
-				this.nodoMoKpisActual = result;
 				console.log(result);
+				this.nodoMoKpisActual = result;				
 				this.processKpisData(result);
 			},
 			error => console.error(error));
@@ -135,6 +144,41 @@ export class DashboardComponent {
 		this.througput     = 0;
 		this.rrcfail       = 0;
 		this.latency       = 0;
+	}
+
+	emittedKpi(evento) {
+		// console.info(evento, this.nodoMoKpisActual);
+		var encontrado = false;
+		for (var i = 0; i < this.nodoMoKpisActual.length; ++i) {			
+			if (this.nodoMoKpisActual[i].type == evento || this.nodoMoKpisActual[i].type == evento.toUpperCase()) {
+				this.kpiInfo = this.nodoMoKpisActual[i];
+				encontrado = true;
+			}
+		}
+		if(encontrado) {
+			this.procesaKpiValues();
+			setTimeout(function () {
+				console.log("Scroll");
+				window.scrollTo(0,600);
+			},1000);
+		}
+	}
+
+	procesaKpiValues() {
+		console.log(this.kpiInfo);
+
+		this.kpiProps = [];
+
+		var propiedades = this.kpiValues.getValues(this.kpiInfo.type);
+
+		for (var i = 0; i < propiedades.length; ++i) {
+			var obj = {
+				'nombre': propiedades[i],
+				'valor': this.kpiInfo.kpis[0][propiedades[i]]
+			}
+			this.kpiProps.push(obj);
+		}
+		console.log(this.kpiProps);	
 	}
 
 }

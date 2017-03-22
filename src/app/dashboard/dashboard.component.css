@@ -53,8 +53,9 @@ md-card-header {
     flex: 1 50%;
 }
 
-.flex-container app-gauge-chart {
-    width: 33%;
+.flex-container app-gauge-chart,
+.flex-container app-bar-chart {
+    width: 32%;
     margin-bottom: 10px;
     flex: 0 1 auto;
 }
@@ -69,8 +70,8 @@ md-slide-toggle {
 
 hr {
     margin: 25px 0;
-  height: 6px;
-  background: url(./assets/img/hr.png) repeat-x 0 0;
+    height: 6px;
+    background: url(./assets/img/hr.png) repeat-x 0 0;
     border: 0;
 }
 
@@ -78,12 +79,17 @@ h2 {
     margin-top: 95px;
 }
 
+h1 {
+    text-align: center;
+}
+
 
 /* Medium screens */
 
 @media all and (max-width: 1024px) {
-    .flex-container app-gauge-chart {
-        width: 33%;
+    .flex-container app-gauge-chart,
+    .flex-container app-bar-chart {
+        width: 32%;
     }
 }
 
@@ -95,7 +101,8 @@ h2 {
         /* On small screens, we are no longer using row direction but column */
         flex-direction: column;
     }
-    .flex-container app-gauge-chart {
+    .flex-container app-gauge-chart,
+    .flex-container app-bar-chart {
         width: 100%;
     }
 }

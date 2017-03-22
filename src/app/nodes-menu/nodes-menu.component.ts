@@ -3,6 +3,7 @@ import { MdDialog } from '@angular/material';
 import { MdProgressBar } from '@angular/material';
 import { NodeGraphDialogComponent } from '../node-graph-dialog/node-graph-dialog.component';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
+import { ErrorSnackService } from '../shared/services/error-snack.service';
 import * as _ from 'underscore';
 
 @Component({
@@ -26,7 +27,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	@Output() emitNodeData = new EventEmitter<any>();
 	nodosActuales = [];
 
-	constructor(public dialog: MdDialog, private http: HttpGetServiceService) { }
+	constructor(public dialog: MdDialog, private http: HttpGetServiceService, private errorSnack: ErrorSnackService) { }
 
 	ngOnInit() {
 		this.ancho = (window.innerWidth) + 'px';
@@ -73,9 +74,11 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 
 	setNodeData(nodo) {
 		// var dataEmitted = [this.ossId[1], nodo, this.mo];
+		var mensaje = 'Nodo seleccionado: ' + nodo.nodeId;
+		this.errorSnack.openSnackBar(mensaje, "Ok");
 		var dataEmitted = [this.ossId[1], nodo.nodeId, nodo[nodo.nodeId]];
 		console.log('dataEmitted:', dataEmitted);
-		this.emitNodeData.emit(dataEmitted);
+		this.emitNodeData.emit(dataEmitted);		
 		this.closeNodesMenu();
 		this.ossId = null;
 	}
@@ -108,7 +111,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 			}
 			
 		}
-		console.log(this.nodosActuales);
+		// console.log(this.nodosActuales);
 	}
 
 }

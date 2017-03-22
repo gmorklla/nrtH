@@ -18,3 +18,9 @@ html, body, md-sidenav-container {
 app-nodes-menu {
 	z-index: 30;
 }
+
+snack-bar-container {
+	border-top-left-radius: 20px !important;
+	border-top-right-radius: 20px !important;
+	background: slategrey !important;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, OnChanges, AfterViewInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import * as c3 from 'c3';
 import * as d3 from 'd3';
 
@@ -7,22 +7,18 @@ import * as d3 from 'd3';
 	templateUrl: './gauge-chart.component.html',
 	styleUrls: ['./gauge-chart.component.css']
 })
-export class GaugeChartComponent implements OnInit, AfterViewInit, OnChanges {
-
-	gaugeChart;
+export class GaugeChartComponent implements AfterViewInit, OnChanges {
+	
 	@Input() data: number;
 	@Input() id: string;
 	@Input() title: string;
+	@Output() emitKpiSelected = new EventEmitter<any>();
 	@ViewChild('chart') elemento: ElementRef;
 	private htmlElement: HTMLElement;
 	private host;
 	private chart;
 
 	constructor() { }
-
-	ngOnInit() {
-
-	}
 
 	ngAfterViewInit() {
 		this.htmlElement = this.elemento.nativeElement;
@@ -35,6 +31,7 @@ export class GaugeChartComponent implements OnInit, AfterViewInit, OnChanges {
 	}
 
 	generarChart() {
+
 		this.chart = c3.generate({
 			bindto: this.host,
 			data: {
@@ -42,7 +39,9 @@ export class GaugeChartComponent implements OnInit, AfterViewInit, OnChanges {
 					[this.title, 0]
 				],
 				type: 'gauge',
-				// onclick: function(d, i) { console.log("onclick", d, i); },
+				// onclick: function(d, i) { 
+				// 	console.log("onclick", d);					
+				// },				
 				// onmouseover: function(d, i) { console.log("onmouseover", d, i); },
 				// onmouseout: function(d, i) { console.log("onmouseout", d, i); }
 			},
@@ -71,11 +70,16 @@ export class GaugeChartComponent implements OnInit, AfterViewInit, OnChanges {
 			},
 			size: {
 				height: 120
-			}
+			},
+			// oninit: function () { console.log(this); }
 		});
 		this.chart.load({
 			columns: [[this.title, this.data]]
 		});
+	}
+
+	emitiendo() {
+		this.emitKpiSelected.emit(this.title);
 	}
 
 }
