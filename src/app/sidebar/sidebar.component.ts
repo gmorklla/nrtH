@@ -3,6 +3,7 @@ import { HttpGetServiceService } from '../shared/services/http-get-service.servi
 import { HttpGetKpis } from '../shared/classes/http-get-kpis';
 import { GetNodeMoListService } from '../shared/services/get-node-mo-list.service';
 import { ErrorSnackService } from '../shared/services/error-snack.service';
+import { AppLoadingService } from '../shared/services/app-loading.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -26,11 +27,13 @@ export class SidebarComponent implements OnInit {
   }
 
   gettingData() {
-    this.http.getConfiguration().subscribe(
+    AppLoadingService.get( 'AppLoading' ).emit( 'true' );
+    this.http.getConfiguration(2).subscribe(
       result => {
         this.data = result;
         console.log(this.data);
         this.processData();
+        AppLoadingService.get( 'AppLoading' ).emit( 'false' );
       },
       error => {
         console.error(error);        

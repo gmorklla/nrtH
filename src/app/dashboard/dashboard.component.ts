@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
 import { HttpGetKpis } from '../shared/classes/http-get-kpis';
 import { KpiValuesService } from '../shared/services/kpi-values.service';
+import { ErrorSnackService } from '../shared/services/error-snack.service';
 
 @Component({
 	selector: 'app-dashboard',
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnChanges {
 	mo;
 	checked: boolean  = false;
 	disabled: boolean = false;
-	ultima: boolean   = false;
+	ultima: boolean   = true;
 	loading: boolean  = false;
 	accessibility     = 0;
 	availability      = 0;
@@ -35,7 +36,7 @@ export class DashboardComponent implements OnChanges {
 	kpiProps: Array<{nombre: number, valor: number}> = [];
 	nodoMoKpisActual;
 
-	constructor(private http: HttpGetServiceService, private kpiValues: KpiValuesService) { }
+	constructor(private http: HttpGetServiceService, private kpiValues: KpiValuesService, private errorSnack: ErrorSnackService) { }
 
 	ngOnChanges(changes: SimpleChanges) {		
 		if(changes['nodeData']) {
@@ -84,8 +85,15 @@ export class DashboardComponent implements OnChanges {
 			horaF = 1;
 		}
 
+		if(this.mo == undefined || this.mo == null) {
+			this.errorSnack.openSnackBar("Por favor, selecciona un MO", "Ok");
+			this.loading = false;
+			return;
+		}
+
 		this.kpiRequest = new HttpGetKpis(nodeId, moId, ossId, lastest, diaI, horaI, diaF, horaF);
-		this.http.getKpis(this.kpiRequest).subscribe(
+
+		this.http.getKpis(this.kpiRequest, 1).subscribe(
 			result => {
 				this.loading = false;
 				console.log(result);
@@ -157,10 +165,6 @@ export class DashboardComponent implements OnChanges {
 		}
 		if(encontrado) {
 			this.procesaKpiValues();
-			setTimeout(function () {
-				console.log("Scroll");
-				window.scrollTo(0,600);
-			},1000);
 		}
 	}
 

@@ -4,6 +4,7 @@ import { MdProgressBar } from '@angular/material';
 import { NodeGraphDialogComponent } from '../node-graph-dialog/node-graph-dialog.component';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
 import { ErrorSnackService } from '../shared/services/error-snack.service';
+import { AppLoadingService } from '../shared/services/app-loading.service';
 import * as _ from 'underscore';
 
 @Component({
@@ -31,7 +32,11 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 
 	ngOnInit() {
 		this.ancho = (window.innerWidth) + 'px';
+
+		AppLoadingService.get( 'AppLoading' ).emit( 'true' );
+
 		this.procesar(JSON.parse(localStorage.getItem("data")));
+
 	}
 
 	ngOnChanges() {
@@ -78,7 +83,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 		this.errorSnack.openSnackBar(mensaje, "Ok");
 		var dataEmitted = [this.ossId[1], nodo.nodeId, nodo[nodo.nodeId]];
 		console.log('dataEmitted:', dataEmitted);
-		this.emitNodeData.emit(dataEmitted);		
+		this.emitNodeData.emit(dataEmitted);
 		this.closeNodesMenu();
 		this.ossId = null;
 	}
@@ -98,19 +103,20 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 			obj['nodeId'] = node;
 
 			for (var j = 0; j < this.nodosActuales.length; ++j) {
-				if(this.nodosActuales[j][node]) {
+				if (this.nodosActuales[j][node]) {
 					this.nodosActuales[j][node].push(mo);
 					agregado = true;
 				}
-			}			
-			
+			}
+
 			// obj.nodeId = node;
 			// obj.moId.push(mo);
-			if(agregado == false) {
+			if (agregado == false) {
 				this.nodosActuales.push(obj);
 			}
-			
+
 		}
+		AppLoadingService.get( 'AppLoading' ).emit( 'false' );
 		// console.log(this.nodosActuales);
 	}
 

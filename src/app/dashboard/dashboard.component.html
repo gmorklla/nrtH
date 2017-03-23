@@ -50,11 +50,15 @@
                 <md-tab label="Graph">
                     <hr>
                     <h1 *ngIf="kpiInfo"><md-icon>assessment</md-icon> {{kpiInfo.type}}</h1>
+                    <hr>
+                    <p class="formula" *ngIf="kpiInfo">{{kpiInfo.formula}}</p>
                     <div class="flex-container">                    
                         <app-bar-chart *ngFor="let kpiVal of kpiProps" [data]="kpiVal.valor" [title]="kpiVal.nombre"></app-bar-chart>
                     </div>
                 </md-tab>
-                <md-tab label="Table data">Content 2</md-tab>                
+                <md-tab label="Table data">
+                    <app-kpis-table *ngIf="kpiInfo" [kpisData]="nodoMoKpisActual"></app-kpis-table>
+                </md-tab>                
             </md-tab-group>
     </md-card-content>
 </md-card>

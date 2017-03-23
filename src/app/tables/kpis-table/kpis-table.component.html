@@ -1,0 +1,24 @@
+<p>
+    {{kpisData}}
+</p>
+<table [md2Data]="data" #md2="md2DataTable" [rowsPerPage]="10" [(activePage)]="activePage">
+    <thead>
+        <tr>
+            <th md2SortBy="type">Tipo</th>
+            <th md2SortBy="neId">Nodo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of md2.data">
+            <td>{{i}}</td>
+            <td>{{i.neId}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <md2-pagination [rowsPerPageSet]="[5,10,15]"></md2-pagination>
+            </td>
+        </tr>
+    </tfoot>
+</table>

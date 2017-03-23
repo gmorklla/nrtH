@@ -1,0 +1,147 @@
+[
+  {
+    "startDate": "1",
+    "startTime": "1",
+    "endDate": "1",
+    "endTime": "1",
+    "neId": "MX6922L2100",
+    "formula": "Accessibility (%) = 100*(((pmRrcConnEstabSucc/(pmRrcConnEstabAtt-pmRrcConnEstabAttReatt)*(pmS1SigConnEstabSucc/pmS1SigConnEstabAtt)*(pmErabEstabSuccInit/pmErabEstabAttInit))))",
+    "type": "Accessibility",
+    "kpis": [
+      {
+        "date": "20170213",
+        "time": "1145",
+        "endDate": "20170213",
+        "endTime": "0000",
+        "loadDateTime": "20170213.1145",
+        "period": 15,
+        "moid": "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=156922003",
+        "calKpiValue": 5.26,
+        "pmErabEstabSuccInit": 362,
+        "pmErabEstabAttInit": 1281,
+        "pmRrcConnEstabAtt": 1753,
+        "pmRrcConnEstabAttReatt": 2,
+        "pmRrcConnEstabSucc": 1448,
+        "pmS1SigConnEstabSucc": 394,
+        "pmS1SigConnEstabAtt": 1752
+      }
+    ]
+  },
+  {
+    "startDate": "1",
+    "startTime": "1",
+    "endDate": "1",
+    "endTime": "1",
+    "neId": "MX6922L2100",
+    "formula": "Retainability (%) = 100 - 100*((pmErabRelAbnormalEnbAct+pmErabRelMmeAct)/pmErabEstabSuccInit)",
+    "type": "Retainability",
+    "kpis": [
+      {
+        "date": "20170213",
+        "time": "1145",
+        "endDate": "20170213",
+        "endTime": "0000",
+        "loadDateTime": "20170213.1145",
+        "period": 15,
+        "moid": "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=156922003",
+        "calKpiValue": 98.62,
+        "pmErabEstabSuccInit": 362,
+        "pmErabRelAbnormalEnbAct": 4,
+        "pmErabRelMmeAct": 1
+      }
+    ]
+  },
+  {
+    "startDate": "1",
+    "startTime": "1",
+    "endDate": "1",
+    "endTime": "1",
+    "neId": "MX6922L2100",
+    "formula": "Av_CellAvail = 100 * (900-(pmCellDowntimeAuto+pmCellDowntimeMan)/900)",
+    "type": "Availability",
+    "kpis": [
+      {
+        "date": "20170213",
+        "time": "1145",
+        "endDate": "20170213",
+        "endTime": "0000",
+        "loadDateTime": "20170213.1145",
+        "period": 15,
+        "moid": "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=156922003",
+        "calKpiValue": 100,
+        "pmCellDowntimeAuto": 0,
+        "pmCellDowntimeMan": 0
+      }
+    ]
+  },
+  {
+    "startDate": "1",
+    "startTime": "1",
+    "endDate": "1",
+    "endTime": "1",
+    "neId": "MX6922L2100",
+    "formula": "DL Cell Throughput (Mbps) = ((pmPdcpVolDlDrb-pmPdcpVolDlDrbLastTTI)/pmUeThpTimeDl)",
+    "type": "Throughput",
+    "kpis": [
+      {
+        "date": "20170213",
+        "time": "1145",
+        "endDate": "20170213",
+        "endTime": "0000",
+        "loadDateTime": "20170213.1145",
+        "period": 15,
+        "moid": "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=156922003",
+        "calKpiValue": 4.79,
+        "pmPdcpVolDlDrb": 848342,
+        "pmPdcpVolDlDrbLastTTI": 735374,
+        "pmUeThpTimeDl": 23593
+      }
+    ]
+  },
+  {
+    "startDate": "1",
+    "startTime": "1",
+    "endDate": "1",
+    "endTime": "1",
+    "neId": "MX6922L2100",
+    "formula": "RRC Conn Success Rate = 100*(pmRrcConnEstabAtt/pmRrcConnEstabSucc)",
+    "type": "RRCFAIL",
+    "kpis": [
+      {
+        "date": "20170213",
+        "time": "1145",
+        "endDate": "20170213",
+        "endTime": "0000",
+        "loadDateTime": "20170213.1145",
+        "period": 15,
+        "moid": "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=156922003",
+        "calKpiValue": 100,
+        "pmRrcConnEstabAtt": 1753,
+        "pmRrcConnEstabSucc": 1448
+      }
+    ]
+  },
+  {
+    "startDate": "1",
+    "startTime": "1",
+    "endDate": "1",
+    "endTime": "1",
+    "neId": "MX6922L2100",
+    "formula": "Int_DlLatency = pmPdcpLatTimeDl/pmPdcpLatPktTransDl",
+    "type": "Latency",
+    "kpis": [
+      {
+        "date": "20170213",
+        "time": "1145",
+        "endDate": "20170213",
+        "endTime": "0000",
+        "loadDateTime": "20170213.1145",
+        "period": 15,
+        "moid": "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=156922003",
+        "calKpiValue": 8.9,
+        "pmPdcpLatPktTransDl": 221904,
+        "pmPdcpLatTimeDl": 24938
+      }
+    ]
+  }
+]

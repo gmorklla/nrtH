@@ -79,8 +79,18 @@ h2 {
     margin-top: 95px;
 }
 
-h1 {
+h1, p.formula {
     text-align: center;
+}
+
+p.formula {
+    font-size: small;
+    color: darkgray;
+    padding: 5px;
+    border: 1px dotted darkgray;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin-bottom: 25px;
 }
 
 

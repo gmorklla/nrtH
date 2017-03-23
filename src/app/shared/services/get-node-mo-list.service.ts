@@ -5,7 +5,7 @@ import { HttpGetServiceService } from './http-get-service.service';
 export class GetNodeMoListService {
 
 	constructor(private http: HttpGetServiceService) {
-		this.http.getnodeMo().subscribe(
+		this.http.getnodeMo(2).subscribe(
 			result => {
 				this.storeData(result);
 			},
@@ -13,7 +13,7 @@ export class GetNodeMoListService {
 	}
 
 	storeData(data) {
-		if (typeof (Storage) !== "undefined") {
+		if (typeof (Storage) !== "undefined" && localStorage.getItem("data") === null) {
 			// Code for localStorage/sessionStorage.
 			localStorage.setItem("data", JSON.stringify(data));
 			console.log('Set storage');

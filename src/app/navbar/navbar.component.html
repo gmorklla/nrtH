@@ -7,8 +7,11 @@
     </button>
     <span class="example-spacer"></span>
     <button md-button [color]="'white'">
-        <md-icon>track_changes</md-icon> Monitored nodes</button>
-    <button md-button [color]="'white'" [mdMenuTriggerFor]="intelmaMenu">Usuario</button>
+        <md-icon>track_changes</md-icon> Monitored nodes
+    </button>
+    <button md-button [color]="'white'" [mdMenuTriggerFor]="intelmaMenu">
+        <md-icon>account_box</md-icon> Usuario
+    </button>
     <md-menu #intelmaMenu="mdMenu">
         <button md-menu-item routerLink="/inicio" routerLinkActive="active">
             <md-icon>face</md-icon>
@@ -19,7 +22,9 @@
             <span>Log out</span>
         </button>
     </md-menu>
-    <button md-button [color]="'white'">English</button>
+    <button md-button [color]="'white'">
+        <md-icon>translate</md-icon> English
+    </button>
     <button md-button [color]="'white'">
         <md-icon>settings</md-icon>
     </button>
