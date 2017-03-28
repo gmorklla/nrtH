@@ -64,7 +64,7 @@ export class HttpGetServiceService {
 			"endTime": endTime
 		};
 
-		console.log(data);
+		// console.log(data);
 
 		let url;
 

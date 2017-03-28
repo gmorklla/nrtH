@@ -1,0 +1,200 @@
+﻿{
+            "startDate": "20150911", "startTime": "07:00", "endDate": "20150912", "endTime": "19:45", "type": "Availability", "neId": "091942L2100",
+            "formula": "Av_CellAvail = 100 * ( 900 - (kpis.getPmCellDowntimeAuto()+kpis.getPmCellDowntimeMan()) / 900 );",
+            "kpis": [
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmCellDowntimeAuto",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmCellDowntimeMan",
+                            "value": 0
+                        }
+                    ]
+                }
+
+
+            ]
+        }

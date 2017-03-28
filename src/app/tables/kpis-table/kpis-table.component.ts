@@ -10,11 +10,13 @@ export class KpisTableComponent implements OnChanges {
 	@Input() kpisData: any;
 	data: any = null;
 
-	constructor() {}
+	constructor() {
+	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		if(changes['kpisData']) {
-			console.log(typeof this.kpisData);
+		if (changes['kpisData']) {
+			// console.info(this.kpisData);
+			this.data = this.kpisData;
 		}
 	}
 

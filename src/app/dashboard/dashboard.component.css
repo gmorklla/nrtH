@@ -5,7 +5,7 @@
 label.example-margin {
     margin-bottom: 10px;
     display: block;
-    border-bottom: solid 5px black;
+    border-bottom: solid 5px gray;
 }
 
 md-radio-group {
@@ -60,6 +60,11 @@ md-card-header {
     flex: 0 1 auto;
 }
 
+.flex-container app-line-chart-kpi {
+    width: 32%;
+    flex: 0 1 auto;
+}
+
 md-progress-bar {
     margin: 20px 0;
 }
@@ -77,10 +82,17 @@ hr {
 
 h2 {
     margin-top: 95px;
+    color: slategray;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    color: slategray;
 }
 
-h1, p.formula {
+h1, p.formula, app-kpis-table, hr {
     text-align: center;
+    width: 100%;
 }
 
 p.formula {
@@ -91,6 +103,10 @@ p.formula {
     border-radius: 5px;
     background-color: whitesmoke;
     margin-bottom: 25px;
+}
+
+.rtDisplay {
+    background-color: #fafafa;
 }
 
 

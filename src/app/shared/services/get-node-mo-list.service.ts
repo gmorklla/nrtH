@@ -4,7 +4,9 @@ import { HttpGetServiceService } from './http-get-service.service';
 @Injectable()
 export class GetNodeMoListService {
 
-	constructor(private http: HttpGetServiceService) {
+	constructor(private http: HttpGetServiceService) { }
+
+	load() {
 		this.http.getnodeMo(2).subscribe(
 			result => {
 				this.storeData(result);

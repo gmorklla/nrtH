@@ -28,6 +28,7 @@ export class BarChartComponent implements OnInit {
 
 	ngOnChanges() {
 		this.generarChart();
+		console.info("Bar change");
 	}
 
 	generarChart() {

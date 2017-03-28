@@ -19,7 +19,7 @@ img {
 }
 
 md-toolbar {
-    background-color: black;
+    background-color: #009cd5;
     color: white;
     padding: 0;
 }
@@ -37,7 +37,7 @@ md-toolbar {
 	height: 100%;
 	margin-left: -16px;
 	text-align: center;
-	background-color: black;
+	background-color: #009cd5;
 	display: flex;
 }
 

@@ -9,6 +9,10 @@ md-sidenav-container {
     height: 100%;
 }
 
+md-sidenav {
+    padding: 0 !important;
+}
+
 .mat-dialog-container {
     max-width: 100vw !important;
     border-radius: 0 !important;
@@ -28,6 +32,21 @@ snack-bar-container {
     background: slategrey !important;
 }
 
+.appLoading {
+    position: absolute !important;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+}
+
+.c3 .c3-axis-x path, .c3 .c3-axis-x line {
+    stroke: slategray !important;
+}
+.c3 .c3-axis-y path, .c3 .c3-axis-y line {
+    stroke: slategray !important;
+}
+
 /* Initial loading page */
 
 .loading {
@@ -39,7 +58,7 @@ snack-bar-container {
     width: 100%;
     top: 0;
     left: 0;
-    background: #000;
+    background: #009cd5;
     z-index: -1;
 }
 
@@ -48,7 +67,7 @@ snack-bar-container {
 }
 
 .imgLoading {
-	margin-top: 25%;
+	margin-top: 15%;
 }
 
 app-root:empty + .loading {
@@ -78,7 +97,7 @@ app-root:empty + .loading h1 {
 }
 
 .spinner > div {
-    background-color: #333;
+    background-color: #fff;
     height: 100%;
     width: 6px;
     display: inline-block;

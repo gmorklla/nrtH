@@ -21,7 +21,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     AppLoadingService.get('AppLoading').subscribe((res) => {
-      console.log(res);
       this.appLoadingStatus(res);
     });
   }

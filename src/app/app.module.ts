@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,7 +15,7 @@ import { HttpGetServiceService } from './shared/services/http-get-service.servic
 import { ErrorSnackService } from './shared/services/error-snack.service';
 import { AppLoadingService } from './shared/services/app-loading.service';
 import { Ng2PaginationModule } from 'ng2-pagination';
-import { Md2Module }  from 'md2';
+import { Md2Module } from 'md2';
 import { LOCALE_ID } from '@angular/core';
 import 'hammerjs';
 import 'underscore';
@@ -26,6 +26,11 @@ import { TempComponent } from './temp/temp.component';
 import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component';
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { KpisTableComponent } from './tables/kpis-table/kpis-table.component';
+import { LineChartKpiComponent } from './charts/line-chart-kpi/line-chart-kpi.component';
+
+export function startupServiceFactory(startupService: GetNodeMoListService): Function {
+  return () => startupService.load();
+}
 
 @NgModule({
   declarations: [
@@ -39,7 +44,8 @@ import { KpisTableComponent } from './tables/kpis-table/kpis-table.component';
     TempComponent,
     GaugeChartComponent,
     BarChartComponent,
-    KpisTableComponent
+    KpisTableComponent,
+    LineChartKpiComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,20 @@ import { KpisTableComponent } from './tables/kpis-table/kpis-table.component';
     Md2Module.forRoot()
   ],
   entryComponents: [NodeGraphDialogComponent],
-  providers: [ApiService, HttpGetServiceService, ErrorSnackService, GetNodeMoListService, AppLoadingService, KpiValuesService, { provide: LOCALE_ID, useValue: "es-MX" }],
+  providers: [
+      ApiService,
+      HttpGetServiceService,
+      ErrorSnackService,
+      GetNodeMoListService,
+      AppLoadingService,
+      KpiValuesService,
+      { provide: LOCALE_ID, useValue: "es-MX" },
+      { // Provider for APP_INITIALIZER
+        provide: APP_INITIALIZER,
+        useFactory: startupServiceFactory,
+        deps: [GetNodeMoListService],
+        multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

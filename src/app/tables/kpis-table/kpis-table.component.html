@@ -1,17 +1,14 @@
-<p>
-    {{kpisData}}
-</p>
-<table [md2Data]="data" #md2="md2DataTable" [rowsPerPage]="10" [(activePage)]="activePage">
+<table [md2Data]="data" #md2="md2DataTable" [rowsPerPage]="10" class="table table-striped" id="hor-minimalist-a">
     <thead>
         <tr>
-            <th md2SortBy="type">Tipo</th>
-            <th md2SortBy="neId">Nodo</th>
+            <th style="width: 50%" md2SortBy="nombre">Counter</th>
+            <th style="width: 50%" md2SortBy="valor">Valor</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let i of md2.data">
-            <td>{{i}}</td>
-            <td>{{i.neId}}</td>
+            <td>{{i.nombre}}</td>
+            <td>{{i.valor}}</td>
         </tr>
     </tbody>
     <tfoot>

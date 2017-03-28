@@ -1,64 +1,67 @@
-<h2><md-icon md-line>dashboard</md-icon> DASHBOARD</h2>
+<h2><md-icon md-line [color]="'gray'">dashboard</md-icon> DASHBOARD</h2>
 <hr>
 <md-card *ngIf="nodeData" class="animated fadeInUp">
-<!--     <md-card-header>
+    <!--     <md-card-header>
         <md-card-title>
             <md-icon md-list-avatar [color]="'primary'">wifi_tethering</md-icon> Nodo: {{nodeData[1]}} | {{nodeData[0] | uppercase}}
         </md-card-title>
     </md-card-header> -->
     <md-card-content>
-            <section>
-                <label class="example-margin">
-                    <md-icon>wifi_tethering</md-icon> Nodo:
-                </label>
-                <p style="margin-left: 10px;">{{nodeData[1]}}</p>
-                <label class="example-margin">
-                    <md-icon>dns</md-icon> Mo:
-                </label>
-                <md-radio-group name="radio_options" [(ngModel)]="radioGroupValue" (change)="setRadioVal($event)">
-                    <md-radio-button name="radio_options" class="example-margin" *ngFor="let mo of nodeData[2]" [value]="mo">{{mo}}</md-radio-button>
-                </md-radio-group>
-                <!-- <md-radio-group name="radio_options" [(ngModel)]="radioGroupValue">
+        <section>
+            <label class="example-margin">
+                <md-icon [color]="'accent'">wifi_tethering</md-icon> Nodo:
+            </label>
+            <p style="margin-left: 10px;">{{nodeData[1]}}</p>
+            <label class="example-margin">
+                <md-icon [color]="'accent'">dns</md-icon> Mo:
+            </label>
+            <md-radio-group name="radio_options" [(ngModel)]="radioGroupValue" (change)="setRadioVal($event)">
+                <md-radio-button name="radio_options" class="example-margin" *ngFor="let mo of nodeData[2]" [value]="mo">{{mo}}</md-radio-button>
+            </md-radio-group>
+            <!-- <md-radio-group name="radio_options" [(ngModel)]="radioGroupValue">
                     <md-radio-button name="radio_options" class="example-margin" [value]="nodeData[2]" (change)="setRadioVal($event)">{{nodeData[2]}}</md-radio-button>
                 </md-radio-group> -->
-            </section>
-            <div class="flex-container">
-                <md2-datepicker [(ngModel)]="startDateTime" type="datetime" [disabled]="ultima" (change)="setStartTime($event)"></md2-datepicker>
-                <md2-datepicker [(ngModel)]="finalDateTime" type="datetime" format="dd/MM/y HH:mm" [disabled]="ultima" (change)="setFinalTime($event)"></md2-datepicker>
-                <md-slide-toggle class="example-margin" [color]="'accent'" [checked]="checked" [disabled]="disabled" [(ngModel)]="ultima" (change)="ultimaChange()">
-                    Últimos datos
-                </md-slide-toggle>
-                <button md-raised-button (click)="getKpis()">Obtener Kpis</button>
-            </div>
+        </section>
+        <div class="flex-container">
+            <md2-datepicker [(ngModel)]="startDateTime" type="datetime" [disabled]="ultima" (change)="setStartTime($event)"></md2-datepicker>
+            <md2-datepicker [(ngModel)]="finalDateTime" type="datetime" format="dd/MM/y HH:mm" [disabled]="ultima" (change)="setFinalTime($event)"></md2-datepicker>
+            <md-slide-toggle class="example-margin" [color]="'accent'" [checked]="checked" [disabled]="disabled" [(ngModel)]="ultima" (change)="ultimaChange()">
+                Últimos datos
+            </md-slide-toggle>
+            <button md-raised-button (click)="getKpis()">Obtener Kpis</button>
+        </div>
+        <div>
             <hr>
-            <md-progress-bar md-line mode="indeterminate" *ngIf="loading"></md-progress-bar>
-            <div class="flex-container">
-                <app-gauge-chart [data]="accessibility" [id]="'kpi1'" [title]="'Accessibility'" (emitKpiSelected)="emittedKpi($event)">
-                </app-gauge-chart>
-                <app-gauge-chart [data]="availability" [id]="'kpi2'" [title]="'Availability'" (emitKpiSelected)="emittedKpi($event)">
-                </app-gauge-chart>
-                <app-gauge-chart [data]="latency" [id]="'kpi3'" [title]="'Latency'" (emitKpiSelected)="emittedKpi($event)">
-                </app-gauge-chart>
-                <app-gauge-chart [data]="retainability" [id]="'kpi4'" [title]="'Retainability'" (emitKpiSelected)="emittedKpi($event)">
-                </app-gauge-chart>
-                <app-gauge-chart [data]="rrcfail" [id]="'kpi5'" [title]="'Rrcfail'" (emitKpiSelected)="emittedKpi($event)">
-                </app-gauge-chart>
-                <app-gauge-chart [data]="througput" [id]="'kpi6'" [title]="'Throughput'" (emitKpiSelected)="emittedKpi($event)">
-                </app-gauge-chart>
-            </div>
-            <md-tab-group>
-                <md-tab label="Graph">
-                    <hr>
-                    <h1 *ngIf="kpiInfo"><md-icon>assessment</md-icon> {{kpiInfo.type}}</h1>
-                    <hr>
-                    <p class="formula" *ngIf="kpiInfo">{{kpiInfo.formula}}</p>
-                    <div class="flex-container">                    
-                        <app-bar-chart *ngFor="let kpiVal of kpiProps" [data]="kpiVal.valor" [title]="kpiVal.nombre"></app-bar-chart>
-                    </div>
-                </md-tab>
-                <md-tab label="Table data">
-                    <app-kpis-table *ngIf="kpiInfo" [kpisData]="nodoMoKpisActual"></app-kpis-table>
-                </md-tab>                
-            </md-tab-group>
+            <h1><md-icon>schedule</md-icon> Actualizado a las {{tiempo}}</h1>
+            <hr>
+        </div>
+        <md-progress-bar md-line mode="indeterminate" *ngIf="loading"></md-progress-bar>
+        <div class="flex-container">
+            <app-gauge-chart [data]="accessibility" [id]="'kpi1'" [title]="'Accessibility'" (emitKpiSelected)="emittedKpi($event)">
+            </app-gauge-chart>
+            <app-gauge-chart [data]="retainability" [id]="'kpi4'" [title]="'Retainability'" (emitKpiSelected)="emittedKpi($event)">
+            </app-gauge-chart>
+            <app-gauge-chart [data]="availability" [id]="'kpi2'" [title]="'Availability'" (emitKpiSelected)="emittedKpi($event)">
+            </app-gauge-chart>
+            <app-gauge-chart [data]="througput" [id]="'kpi6'" [title]="'Throughput'" (emitKpiSelected)="emittedKpi($event)">
+            </app-gauge-chart>
+            <app-gauge-chart [data]="rrcfail" [id]="'kpi5'" [title]="'Rrcfail'" (emitKpiSelected)="emittedKpi($event)">
+            </app-gauge-chart>
+            <app-gauge-chart [data]="latency" [id]="'kpi3'" [title]="'Latency'" (emitKpiSelected)="emittedKpi($event)">
+            </app-gauge-chart>
+        </div>
+        <div class="flex-container" *ngIf="kpiInfo">
+            <hr>
+            <h1><md-icon>description</md-icon> {{kpiInfo.type}}</h1>
+            <hr>
+            <p class="formula">{{kpiInfo.formula}}</p>
+            <app-kpis-table [kpisData]="kpiProps"></app-kpis-table>
+        </div>
+        <div class="flex-container rtDisplay" *ngIf="nodoMoKpisActual">
+            <hr>
+            <h1><md-icon>timeline</md-icon> RT</h1>
+            <hr>
+            <app-line-chart-kpi *ngFor="let datos of nodoMoKpisActual" [data]="datos" (kpiGValue)="gettingKpiGValue($event)"></app-line-chart-kpi>
+        </div>
     </md-card-content>
 </md-card>

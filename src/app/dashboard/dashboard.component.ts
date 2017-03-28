@@ -35,12 +35,13 @@ export class DashboardComponent implements OnChanges {
 	kpiInfo;
 	kpiProps: Array<{nombre: number, valor: number}> = [];
 	nodoMoKpisActual;
+	tiempo;
 
 	constructor(private http: HttpGetServiceService, private kpiValues: KpiValuesService, private errorSnack: ErrorSnackService) { }
 
 	ngOnChanges(changes: SimpleChanges) {		
 		if(changes['nodeData']) {
-			console.log(changes);
+			// console.log(changes);
 		}
 	}
 
@@ -93,7 +94,7 @@ export class DashboardComponent implements OnChanges {
 
 		this.kpiRequest = new HttpGetKpis(nodeId, moId, ossId, lastest, diaI, horaI, diaF, horaF);
 
-		this.http.getKpis(this.kpiRequest, 1).subscribe(
+		this.http.getKpis(this.kpiRequest, 2).subscribe(
 			result => {
 				this.loading = false;
 				console.log(result);
@@ -183,6 +184,34 @@ export class DashboardComponent implements OnChanges {
 			this.kpiProps.push(obj);
 		}
 		console.log(this.kpiProps);	
+	}
+
+	gettingKpiGValue(event) {
+		this.tiempo = event[2];
+		switch (event[0]) {
+			case "Accessibility":
+				this.accessibility = event[1];
+				break;
+			case "Retainability":
+				this.retainability = event[1];
+				break;
+			case "Availability":
+				this.availability = event[1];
+				break;
+			case "Throughput":
+				this.througput = event[1];
+				break;
+			case "RRCFAIL":
+				this.rrcfail = event[1];
+				break;
+			case "Latency":
+				this.latency = event[1];
+				break;
+			
+			default:
+				console.error("No valid kpi name");
+				break;
+		}
 	}
 
 }
