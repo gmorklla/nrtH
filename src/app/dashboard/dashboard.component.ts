@@ -50,6 +50,7 @@ export class DashboardComponent implements OnChanges {
 
 	setRadioVal(evento) {
 		this.mo = evento.value;
+		this.getKpis();
 	}
 
 	setStartTime(evento) {

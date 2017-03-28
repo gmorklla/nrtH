@@ -28,11 +28,11 @@
             <md-slide-toggle class="example-margin" [color]="'accent'" [checked]="checked" [disabled]="disabled" [(ngModel)]="ultima" (change)="ultimaChange()">
                 Últimos datos
             </md-slide-toggle>
-            <button md-raised-button (click)="getKpis()">Obtener Kpis</button>
+            <!-- <button md-raised-button (click)="getKpis()">Obtener Kpis</button> -->
         </div>
         <div>
             <hr>
-            <h1><md-icon>schedule</md-icon> Actualizado a las {{tiempo}}</h1>
+            <h1><md-icon>schedule</md-icon> Última actualización {{tiempo}}</h1>
             <hr>
         </div>
         <md-progress-bar md-line mode="indeterminate" *ngIf="loading"></md-progress-bar>
