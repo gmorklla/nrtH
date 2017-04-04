@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit, OnChanges {
 
 	ngOnInit() {
 		EmitterService.get('Kpis').subscribe((res) => {
-			this.processKpisData();
+			this.processKpisData(res);
 		});
 	}
 
@@ -57,7 +57,9 @@ export class DashboardComponent implements OnInit, OnChanges {
 
 	setRadioVal(evento) {
 		this.mo = evento.value;
-		this.getKpis();
+		if(this.ultima || this.startDate != undefined && this.startTime != undefined && this.endDate != undefined && this.endTime != undefined) {
+			this.getKpis();
+		}
 	}
 
 	setStartTime(evento) {
@@ -122,7 +124,7 @@ export class DashboardComponent implements OnInit, OnChanges {
 				console.log(result);
 				this.props.setKpis(result);
 				this.nodoMoKpisActual = result;
-				this.processKpisData();
+				this.processKpisData(result);
 				this.intervaloS.updateChart();
 			},
 			error => {
@@ -154,22 +156,24 @@ export class DashboardComponent implements OnInit, OnChanges {
 		return tiempo;
 	}
 
-	processKpisData() {
-		let data = this.props.getKpis();
-		for (var i = 0; i < data.length; ++i) {
-			if (data[i].kpis[0] != undefined) {
-				if (data[i].type == "Accessibility") {
-					this.accessibility = data[i].kpis[0].calKpiValue;
-				} else if (data[i].type == "Retainability") {
-					this.retainability = data[i].kpis[0].calKpiValue;
-				} else if (data[i].type == "Availability") {
-					this.availability = data[i].kpis[0].calKpiValue;
-				} else if (data[i].type == "Throughput") {
-					this.througput = data[i].kpis[0].calKpiValue;
-				} else if (data[i].type == "RRCFAIL") {
-					this.rrcfail = data[i].kpis[0].calKpiValue;
-				} else if (data[i].type == "Latency") {
-					this.latency = data[i].kpis[0].calKpiValue;
+	processKpisData(result) {		
+		let indice = result[0].kpis.length - 1;
+		// let tiempo = data[0].kpis[0].time.slice(0, 2) + ":" + data[0].kpis[0].time.slice(2);
+		for (var i = 0; i < result.length; ++i) {
+			if (result[i].kpis[indice] != undefined) {
+				this.tiempo = result[0].kpis[indice].time.slice(0, 2) + ":" + result[0].kpis[indice].time.slice(2);
+				if (result[i].type == "Accessibility") {
+					this.accessibility = result[i].kpis[indice].calKpiValue;
+				} else if (result[i].type == "Retainability") {
+					this.retainability = result[i].kpis[indice].calKpiValue;
+				} else if (result[i].type == "Availability") {
+					this.availability = result[i].kpis[indice].calKpiValue;
+				} else if (result[i].type == "Throughput") {
+					this.througput = result[i].kpis[indice].calKpiValue;
+				} else if (result[i].type == "RRCFAIL") {
+					this.rrcfail = result[i].kpis[indice].calKpiValue;
+				} else if (result[i].type == "Latency") {
+					this.latency = result[i].kpis[indice].calKpiValue;
 				}
 			} else {
 				let mensaje = "Kpi without data";
@@ -258,10 +262,11 @@ export class DashboardComponent implements OnInit, OnChanges {
 
 	getSoftAlarm() {
 		this.loading = true;
+		let indice = this.kpiInfo.kpis.length - 1;
 
 		let tipo;
-		let dateTime = this.kpiInfo.kpis[0].date + this.tiempo;
-		dateTime = dateTime.split(':')[0] + dateTime.split(':')[1];
+		let dateTime = this.kpiInfo.kpis[indice].date + this.kpiInfo.kpis[indice].time;
+		// dateTime = dateTime.split(':')[0] + dateTime.split(':')[1];
 
 		switch (this.kpiInfo.type) {
 			case "Accessibility":

@@ -1,6 +1,8 @@
 <h2><md-icon md-line [color]="'gray'">dashboard</md-icon> DASHBOARD</h2>
 <hr>
-<!-- <app-temp></app-temp> -->
+<!-- <div style="width: 90%; margin: 0 5%;">
+    <app-temp></app-temp>
+</div> -->
 <md-card *ngIf="nodeData" class="animated fadeInUp">
     <!--     <md-card-header>
         <md-card-title>
@@ -64,7 +66,8 @@
             <hr>
             <h1><md-icon>timeline</md-icon> RT</h1>
             <hr>
-            <app-line-chart-kpi *ngFor="let datos of nodoMoKpisActual" [data]="datos" (kpiGValue)="gettingKpiGValue($event)"></app-line-chart-kpi>
+            <!-- <app-line-chart-kpi *ngFor="let datos of nodoMoKpisActual" [data]="datos" (kpiGValue)="gettingKpiGValue($event)"></app-line-chart-kpi> -->
+            <app-temp *ngFor="let datos of nodoMoKpisActual" [data]="datos"></app-temp>
         </div>
     </md-card-content>
 </md-card>

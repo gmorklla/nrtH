@@ -8,4 +8,4 @@
 		<app-dashboard [nodeData]="nodeDataEmitted"></app-dashboard>		
 	</div>
 </md-sidenav-container>
-<app-nodes-menu [ossId]="ossEmitted" (emitNodeData)="emittedNodeData($event)"></app-nodes-menu>
+<app-nodes-menu [ossId]="ossEmitted" (emitNodeData)="emittedNodeData($event)" (openSideNav)="openIt()"></app-nodes-menu>

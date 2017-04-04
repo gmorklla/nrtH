@@ -26,6 +26,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	loading: boolean = false;
 	@ViewChild(MdProgressBar) progressBar: MdProgressBar;
 	@Output() emitNodeData = new EventEmitter<any>();
+	@Output() openSideNav = new EventEmitter<any>();
 	nodosActuales = [];
 
 	constructor(public dialog: MdDialog, private http: HttpGetServiceService, private errorSnack: ErrorSnackService) { }
@@ -68,6 +69,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 		// this.loading = true;
 		let neId = nodo.nodeId;
 		this.setNodeData(nodo);
+		this.openSideNav.emit('Abre!');
 
 		// this.http.getMo(neId).subscribe(
 		// 	result => {
@@ -82,10 +84,9 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 
 	setNodeData(nodo) {
 		// var dataEmitted = [this.ossId[1], nodo, this.mo];
-		var mensaje = 'Nodo seleccionado: ' + nodo.nodeId;
+		var mensaje = 'Selected node: ' + nodo.nodeId;
 		this.errorSnack.openSnackBar(mensaje, "Ok");
 		var dataEmitted = [this.ossId[1], nodo.nodeId, nodo[nodo.nodeId]];
-		console.log('dataEmitted:', dataEmitted);
 		this.emitNodeData.emit(dataEmitted);
 		this.closeNodesMenu();
 		this.ossId = null;

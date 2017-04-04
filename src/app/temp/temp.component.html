@@ -5,10 +5,10 @@
             [datasets]="barChartData"
             [labels]="barChartLabels"
             [options]="barChartOptions"
+            [colors]="lineChartColors"
             [legend]="barChartLegend"
             [chartType]="barChartType"
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>
   </div>
-  <button (click)="randomize()">Update</button>
 </div>

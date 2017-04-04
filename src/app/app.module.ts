@@ -24,7 +24,6 @@ import { EmitterService } from './shared/services/emitter.service'
 import { GetNodeMoListService } from './shared/services/get-node-mo-list.service';
 import { HttpGetServiceService } from './shared/services/http-get-service.service';
 import { ErrorSnackService } from './shared/services/error-snack.service';
-import { KpiUpdateService } from './shared/services/kpi-update.service';
 import { AppLoadingService } from './shared/services/app-loading.service';
 import { SearchPipePipe } from './search-pipe.pipe';
 import { NodeGraphDialogComponent } from './node-graph-dialog/node-graph-dialog.component';
@@ -66,8 +65,7 @@ export function startupServiceFactory(startupService: GetNodeMoListService): Fun
   entryComponents: [NodeGraphDialogComponent],
   providers: [
       ApiService,
-      VarsActService,
-      KpiUpdateService,
+      VarsActService,    
       TimePlusService,
       IntervalRequestService,
       EmitterService,
