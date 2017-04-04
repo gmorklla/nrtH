@@ -42,9 +42,12 @@ export class IntervalRequestService {
 
 		this.kpiRequest = new HttpGetKpis(propiedades.node, propiedades.mo, propiedades.oss, false, propiedades.diaI, this.horaI, propiedades.diaF, this.horaF);
 
+		console.info(this.kpiRequest);
+
 		if (parseInt(this.horaI) < 1200) {
 			this.http.getKpis(this.kpiRequest, 1).subscribe(
 				result => {
+					console.log(result);
 					this.props.setKpis(result);
 					EmitterService.get( 'Kpis' ).emit( result );
 					// this.processData(result);

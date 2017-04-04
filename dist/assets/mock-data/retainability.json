@@ -1,0 +1,246 @@
+﻿{
+            "startDate": "20150911", "startTime": "07:00", "endDate": "20150912", "endTime": "19:45", "type": "Retainability", "neId": "091942L2100",
+            "formula": "Retainability  (%) = 100 - 100 * ( ( kpis.getPmErabRelAbnormalEnbAct() + kpis.getPmErabRelMmeAct())/ kpis.getPmErabEstabSuccInit())",
+            "kpis": [
+               {
+                   "date": "20151114",
+                   "time": "0815",
+                   "cellId": "EUtranCellFDD=091942002",
+                   "calKpiValue": 100,
+                   "countersValues": [
+                       {
+                           "counter": "pmErabEstabSuccInit",
+                           "value": 20
+                       },
+                       {
+                           "counter": "pmErabRelAbnormalEnbAct",
+                           "value": 0
+                       },
+                       {
+                           "counter": "pmErabRelMmeAct",
+                           "value": 0
+                       }
+                   ]
+               },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 20
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0815",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 33
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 13
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 47
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 13
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0830",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 47
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 24
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 73
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 1
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942002",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 24
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 0
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "date": "20151114",
+                    "time": "0845",
+                    "cellId": "EUtranCellFDD=091942001",
+                    "calKpiValue": 100,
+                    "countersValues": [
+                        {
+                            "counter": "pmErabEstabSuccInit",
+                            "value": 73
+                        },
+                        {
+                            "counter": "pmErabRelAbnormalEnbAct",
+                            "value": 1
+                        },
+                        {
+                            "counter": "pmErabRelMmeAct",
+                            "value": 0
+                        }
+                    ]
+                }
+            ]
+        }

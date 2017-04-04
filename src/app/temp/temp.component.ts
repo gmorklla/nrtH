@@ -91,9 +91,16 @@ export class TempComponent implements OnInit, OnChanges {
 					time = time.slice(0, 2) + ":" + time.slice(2);					
 					//Update here
 					let clone = JSON.parse(JSON.stringify(this.barChartData));
-					clone[0].data.push(valor);
+					if(clone[0]) {
+						clone[0].data.push(valor);	
+						this.barChartData = clone;
+					} else {
+						this.title = this.data.type;
+						this.barChartOptions.title.text = this.title;
+						this.barChartData.push({ data: [valor], label: this.title });
+					}
 					this.barChartLabels.push(time);
-					this.barChartData = clone;
+					
 				} else {
 					let mensaje = "There is no kpi data";
 					this.errorSnack.openSnackBar(mensaje, "Ok");
