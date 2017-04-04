@@ -1,48 +1,55 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
 import { HttpGetKpis } from '../shared/classes/http-get-kpis';
+import { ONM } from '../shared/classes/onm';
 import { KpiValuesService } from '../shared/services/kpi-values.service';
 import { ErrorSnackService } from '../shared/services/error-snack.service';
+import { VarsActService } from '../shared/services/vars-act.service';
+import { IntervalRequestService } from '../shared/services/interval-request.service';
+import { EmitterService } from '../shared/services/emitter.service';
 
 @Component({
 	selector: 'app-dashboard',
 	templateUrl: './dashboard.component.html',
 	styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnChanges {
+export class DashboardComponent implements OnInit, OnChanges {
 
 	@Input() nodeData: any;
 	radioGroupValue;
 
-	startDateTime;
-	finalDateTime;
 	startDate;
 	startTime;
 	endDate;
 	endTime;
 	mo;
-	checked: boolean  = false;
+	checked: boolean = false;
 	disabled: boolean = false;
-	ultima: boolean   = true;
-	loading: boolean  = false;
-	accessibility     = 0;
-	availability      = 0;
-	latency           = 0;
-	retainability     = 0;
-	rrcfail           = 0;
-	througput         = 0;
+	ultima: boolean = true;
+	loading: boolean = false;
+	accessibility: number = 0;
+	availability: number = 0;
+	latency: number = 0;
+	retainability: number = 0;
+	rrcfail: number = 0;
+	througput: number = 0;
 	kpiRequest: HttpGetKpis;
 	kpiInfo;
-	kpiProps: Array<{nombre: number, valor: number}> = [];
+	kpiProps: Array<{ nombre: number, valor: number }> = [];
 	nodoMoKpisActual;
-	tiempo;
+	tiempo: string;
+	softAlarm: string;
 
-	constructor(private http: HttpGetServiceService, private kpiValues: KpiValuesService, private errorSnack: ErrorSnackService) { }
+	constructor(private http: HttpGetServiceService, private kpiValues: KpiValuesService, private errorSnack: ErrorSnackService, private props: VarsActService, private intervaloS: IntervalRequestService) { }
 
-	ngOnChanges(changes: SimpleChanges) {		
-		if(changes['nodeData']) {
-			// console.log(changes);
-		}
+	ngOnInit() {
+		EmitterService.get('Kpis').subscribe((res) => {
+			this.processKpisData();
+		});
+	}
+
+	ngOnChanges() {
+
 	}
 
 	ultimaChange() {
@@ -50,6 +57,7 @@ export class DashboardComponent implements OnChanges {
 
 	setRadioVal(evento) {
 		this.mo = evento.value;
+		this.getKpis();
 	}
 
 	setStartTime(evento) {
@@ -62,54 +70,73 @@ export class DashboardComponent implements OnChanges {
 		var dateTime = this.formatDate(evento);
 		this.endDate = dateTime.dia;
 		this.endTime = dateTime.hora;
+		if (this.startDate != undefined && this.startTime != undefined) {
+			this.getKpis();
+		}
 	}
 
 	getKpis() {
+
+		this.kpiInfo = null;
+		this.nodoMoKpisActual = null;
 
 		this.loading = true;
 
 		this.resetKpis();
 
-		let nodeId  = this.nodeData[1];
-		let moId    = this.mo;
-		let ossId   = 'ixt4gr9a';
+		let nodeId = this.nodeData[1];
+		let moId = this.mo;
+		let ossId = 'ixt4gr9a';
 		let lastest = this.ultima;
-		let diaI    = this.startDate;
-		let horaI   = this.startTime;
-		let diaF    = this.endDate;
-		let horaF   = this.endTime;
+		let diaI = this.startDate;
+		let horaI = this.startTime;
+		let diaF = this.endDate;
+		let horaF = this.endTime;
 
-		if(lastest) {
-			diaI  = 1;
+		if (lastest == true) {
+			diaI = 1;
 			horaI = 1;
-			diaF  = 1;
+			diaF = 1;
 			horaF = 1;
+		} else {
+			diaI = 20170213;
+			diaF = 20170213;
 		}
 
-		if(this.mo == undefined || this.mo == null) {
-			this.errorSnack.openSnackBar("Por favor, selecciona un MO", "Ok");
+		console.log("Original: ", horaF);
+
+		var propiedades = new ONM(ossId, nodeId, moId, diaI, horaI, diaF, horaF);
+		this.props.setProps(propiedades);
+
+		if (this.mo == undefined || this.mo == null) {
+			this.errorSnack.openSnackBar("Select a Mo", "Ok");
 			this.loading = false;
 			return;
 		}
 
 		this.kpiRequest = new HttpGetKpis(nodeId, moId, ossId, lastest, diaI, horaI, diaF, horaF);
 
-		this.http.getKpis(this.kpiRequest, 2).subscribe(
+		this.http.getKpis(this.kpiRequest, 1).subscribe(
 			result => {
 				this.loading = false;
 				console.log(result);
-				this.nodoMoKpisActual = result;				
-				this.processKpisData(result);
+				this.props.setKpis(result);
+				this.nodoMoKpisActual = result;
+				this.processKpisData();
+				this.intervaloS.updateChart();
 			},
-			error => console.error(error));
+			error => {
+				console.error(error);
+				this.errorSnack.openSnackBar("Error", "Ok");
+			});
 	}
 
 	formatDate(evento) {
-		var nDate   = new Date(evento.value);
-		var dia     = formatTwoDigits(nDate.getDate());
-		var mes     = formatTwoDigits(nDate.getMonth());
-		var year    = nDate.getFullYear();
-		var hora    = formatTwoDigits(nDate.getHours());
+		var nDate = new Date(evento.value);
+		var dia = formatTwoDigits(nDate.getDate());
+		var mes = formatTwoDigits(nDate.getMonth());
+		var year = nDate.getFullYear();
+		var hora = formatTwoDigits(nDate.getHours());
 		var minutos = formatTwoDigits(nDate.getMinutes());
 
 		function formatTwoDigits(arg) {
@@ -127,45 +154,59 @@ export class DashboardComponent implements OnChanges {
 		return tiempo;
 	}
 
-	processKpisData(kpiData) {
-		for (var i = 0; i < kpiData.length; ++i) {
-			if(kpiData[i].type == "Accessibility") {
-				this.accessibility = kpiData[i].kpis[0].calKpiValue;
-			} else if(kpiData[i].type == "Retainability") {
-				this.retainability = kpiData[i].kpis[0].calKpiValue;
-			} else if(kpiData[i].type == "Availability") {
-				this.availability = kpiData[i].kpis[0].calKpiValue;
-			} else if(kpiData[i].type == "Throughput") {
-				this.througput = kpiData[i].kpis[0].calKpiValue;
-			} else if(kpiData[i].type == "RRCFAIL") {
-				this.rrcfail = kpiData[i].kpis[0].calKpiValue;
-			} else if(kpiData[i].type == "Latency") {
-				this.latency = kpiData[i].kpis[0].calKpiValue;
+	processKpisData() {
+		let data = this.props.getKpis();
+		for (var i = 0; i < data.length; ++i) {
+			if (data[i].kpis[0] != undefined) {
+				if (data[i].type == "Accessibility") {
+					this.accessibility = data[i].kpis[0].calKpiValue;
+				} else if (data[i].type == "Retainability") {
+					this.retainability = data[i].kpis[0].calKpiValue;
+				} else if (data[i].type == "Availability") {
+					this.availability = data[i].kpis[0].calKpiValue;
+				} else if (data[i].type == "Throughput") {
+					this.througput = data[i].kpis[0].calKpiValue;
+				} else if (data[i].type == "RRCFAIL") {
+					this.rrcfail = data[i].kpis[0].calKpiValue;
+				} else if (data[i].type == "Latency") {
+					this.latency = data[i].kpis[0].calKpiValue;
+				}
+			} else {
+				let mensaje = "Kpi without data";
+				this.errorSnack.openSnackBar(mensaje, "Ok");
 			}
 		}
-		
+
 	}
 
 	resetKpis() {
-		this.availability  = 0;
+		this.availability = 0;
 		this.retainability = 0;
 		this.accessibility = 0;
-		this.througput     = 0;
-		this.rrcfail       = 0;
-		this.latency       = 0;
+		this.througput = 0;
+		this.rrcfail = 0;
+		this.latency = 0;
 	}
 
 	emittedKpi(evento) {
 		// console.info(evento, this.nodoMoKpisActual);
+		let data = this.props.getKpis();
+		console.log("EmittedKpi data", data);
 		var encontrado = false;
-		for (var i = 0; i < this.nodoMoKpisActual.length; ++i) {			
-			if (this.nodoMoKpisActual[i].type == evento || this.nodoMoKpisActual[i].type == evento.toUpperCase()) {
-				this.kpiInfo = this.nodoMoKpisActual[i];
+		for (var i = 0; i < data.length; ++i) {
+			if (data[i].type == evento || data[i].type == evento.toUpperCase()) {
+				this.kpiInfo = data[i];
 				encontrado = true;
 			}
 		}
-		if(encontrado) {
-			this.procesaKpiValues();
+		if (encontrado) {
+			console.log("Encontrado");
+			if (this.kpiInfo.kpis.length != 0) {
+				this.getSoftAlarm();
+				this.procesaKpiValues();
+			} else {
+				this.errorSnack.openSnackBar("Kpi without data", "Ok");
+			}	
 		}
 	}
 
@@ -183,10 +224,11 @@ export class DashboardComponent implements OnChanges {
 			}
 			this.kpiProps.push(obj);
 		}
-		console.log(this.kpiProps);	
+		//console.log(this.kpiProps);	
 	}
 
 	gettingKpiGValue(event) {
+		//this.nodoMoKpisActual = event[3];
 		this.tiempo = event[2];
 		switch (event[0]) {
 			case "Accessibility":
@@ -207,11 +249,53 @@ export class DashboardComponent implements OnChanges {
 			case "Latency":
 				this.latency = event[1];
 				break;
-			
+
 			default:
 				console.error("No valid kpi name");
 				break;
 		}
+	}
+
+	getSoftAlarm() {
+		this.loading = true;
+
+		let tipo;
+		let dateTime = this.kpiInfo.kpis[0].date + this.tiempo;
+		dateTime = dateTime.split(':')[0] + dateTime.split(':')[1];
+
+		switch (this.kpiInfo.type) {
+			case "Accessibility":
+				tipo = '0';
+				break;
+			case "Retainability":
+				tipo = '3';
+				break;
+			case "Availability":
+				tipo = '1';
+				break;
+			case "Throughput":
+				tipo = '5';
+				break;
+			case "RRCFAIL":
+				tipo = '4';
+				break;
+			case "Latency":
+				tipo = '2';
+				break;
+
+			default:
+				console.error("No valid kpi type");
+				break;
+		}
+
+		this.http.getSoftAlarm(tipo, dateTime).subscribe(
+			result => {
+				this.loading = false;
+				console.log(result[1]);
+				this.softAlarm = result[1];
+			},
+			error => console.error(error)
+		);
 	}
 
 }

@@ -7,12 +7,14 @@ export class ApiService {
 
   // 201.99.115.28
   // 192.168.101.250
+  // Ecoss ip: 10.119.175.15
 
 	api = {
 		'endpoint': 'http://201.99.115.28:8900/nrt/configuration',
 		'endpoint2': 'http://201.99.115.28:8900/nrt/kpis',
 		'endpoint3': 'http://201.99.115.28:8900/nrt/configuration/moids',
-		'endpoint4': 'http://201.99.115.28:8900/nrt/kpis/nodes'
+		'endpoint4': 'http://201.99.115.28:8900/nrt/kpis/nodes',
+		'endpoint5': 'http://201.99.115.28:8900/nrt/softalarm/quarterly'
 	}
 
 	api2 = {
@@ -20,6 +22,14 @@ export class ApiService {
 		'endpoint2': 'http://201.99.115.28:8900/nrt/kpis',
 		'endpoint3': 'http://201.99.115.28:8900/nrt/configuration/moids',
 		'endpoint4': './assets/mock-data/nodeMo.json'
+	}
+
+	apiEcoss = {
+		'endpoint': 'http://10.119.175.15:8900/nrt/configuration',
+		'endpoint2': 'http://10.119.175.15:8900/nrt/kpis',
+		'endpoint3': 'http://10.119.175.15:8900/nrt/configuration/moids',
+		'endpoint4': 'http://10.119.175.15:8900/nrt/kpis/nodes',
+		'endpoint5': 'http://10.119.175.15:8900/nrt/softalarm/quarterly'
 	}
 
 	getApi() {

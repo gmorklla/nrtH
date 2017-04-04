@@ -10,7 +10,6 @@ import * as d3 from 'd3';
 export class GaugeChartComponent implements AfterViewInit, OnChanges {
 	
 	@Input() data: number;
-	@Input() id: string;
 	@Input() title: string;
 	@Output() emitKpiSelected = new EventEmitter<any>();
 	@ViewChild('chart') elemento: ElementRef;

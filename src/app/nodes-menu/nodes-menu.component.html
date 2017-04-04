@@ -16,10 +16,10 @@
     <span *ngIf="!ossId">Elige un Oss</span>
     <div *ngIf="ossId">
         <md-input-container class="example-full-width">
-            <input mdInput placeholder="Buscar" [(ngModel)]="search">
+            <input mdInput placeholder="Search" [(ngModel)]="search">
         </md-input-container>
         <md-list>
-            <h3 md-subheader>Nodos</h3>            
+            <h3 md-subheader>Nodes</h3>            
 <!--             <md-list-item *ngFor="let node of ossId[0].targetNodes | searchPipe:'name':search | paginate: { itemsPerPage: 5, currentPage: p }">
                 <md-icon md-list-avatar [color]="'primary'">wifi_tethering</md-icon>
                 <h4>{{node.nodeId}}</h4>

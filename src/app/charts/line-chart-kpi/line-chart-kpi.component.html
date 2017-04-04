@@ -1,4 +1,8 @@
 <div class="flex-container">
+    <button md-button (click)="changeGraph()">
+        <md-icon *ngIf="chartType == 'bar'" [color]="'accent'">equalizer</md-icon>
+        <md-icon *ngIf="chartType == 'line'" [color]="'accent'">timeline</md-icon>
+    </button>
     <h3>{{data.type}}</h3>
     <!--     <button class="chartKpiVisibility" md-raised-button [color]="'white'" (click)="visibility = !visibility">
         <md-icon *ngIf="visibility">visibility_off</md-icon>
@@ -9,10 +13,4 @@
     <md-card-content>
         <div class="grafica" #chart></div>
     </md-card-content>
-    <md-card-actions>
-        <button md-button (click)="changeGraph()">
-        	<md-icon *ngIf="chartType == 'bar'" [color]="'accent'">equalizer</md-icon>
-        	<md-icon *ngIf="chartType == 'line'" [color]="'accent'">timeline</md-icon>
-        </button>
-    </md-card-actions>
 </md-card>

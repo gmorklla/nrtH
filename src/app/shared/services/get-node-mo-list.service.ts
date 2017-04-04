@@ -7,7 +7,7 @@ export class GetNodeMoListService {
 	constructor(private http: HttpGetServiceService) { }
 
 	load() {
-		this.http.getnodeMo(2).subscribe(
+		this.http.getnodeMo(1).subscribe(
 			result => {
 				this.storeData(result);
 			},

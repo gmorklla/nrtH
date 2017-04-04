@@ -5,7 +5,7 @@
 	</md-sidenav>
 	<div class="my-content">
 		<app-navbar (openSideNav)="openIt()"></app-navbar>		
-		<app-dashboard [nodeData]="nodeDataEmitted"></app-dashboard>
-		<app-nodes-menu [ossId]="ossEmitted" (emitNodeData)="emittedNodeData($event)"></app-nodes-menu>
+		<app-dashboard [nodeData]="nodeDataEmitted"></app-dashboard>		
 	</div>
 </md-sidenav-container>
+<app-nodes-menu [ossId]="ossEmitted" (emitNodeData)="emittedNodeData($event)"></app-nodes-menu>

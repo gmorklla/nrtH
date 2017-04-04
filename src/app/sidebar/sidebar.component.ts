@@ -28,7 +28,7 @@ export class SidebarComponent implements OnInit {
 
   gettingData() {
     AppLoadingService.get( 'AppLoading' ).emit( 'true' );
-    this.http.getConfiguration(2).subscribe(
+    this.http.getConfiguration(1).subscribe(
       result => {
         this.data = result;
         // console.log(this.data);

@@ -36,6 +36,7 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 		AppLoadingService.get( 'AppLoading' ).emit( 'true' );
 
 		if(localStorage.getItem("data")) {
+			console.log("localStorage data");
 			this.procesar(JSON.parse(localStorage.getItem("data")));
 		}
 
