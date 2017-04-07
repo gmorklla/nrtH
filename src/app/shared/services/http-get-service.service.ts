@@ -17,7 +17,9 @@ export class HttpGetServiceService {
 	private kpisUrl = this.apiService.getApi().endpoint2;
 	private moIdUrl = this.apiService.getApi().endpoint3;
 	private nodeMoUrl = this.apiService.getApi().endpoint4;
-	private softAlarm = this.apiService.getApi().endpoint5;
+	private softAlarmQ = this.apiService.getApi().endpoint5;
+	private softAlarmH = this.apiService.getApi().endpoint6;
+	private ossEndpoint = this.apiService.getApi().endpoint7;
 
 	private configUrl2 = this.apiService.getJsons().endpoint;
 	private nodeMoUrl2 = this.apiService.getJsons().endpoint4;
@@ -108,11 +110,19 @@ export class HttpGetServiceService {
 
 	}
 
-	getSoftAlarm(type: string, date: string) {
+	getSoftAlarm(type: string, date: string, range: string) {
 		let headers = new Headers();
 		headers.append('Content-Type', "application/json;charset=utf-8");
 
-		return this.http.get(this.softAlarm + '/' + type + '/' + date, {
+		let url;
+
+		if(range == "q") {
+			url = this.softAlarmQ + '/' + type + '/' + date;
+		} else if (range == "h") {
+			url = this. softAlarmH + '/' + date;
+		}
+
+		return this.http.get(url, {
 			headers: headers
 		})
 			.map(response => response.json())
@@ -141,6 +151,35 @@ export class HttpGetServiceService {
 			.catch(error => Observable.throw(error || 'Server error'))
 			.finally(() => console.log('Finally httpService'));
 
+	}
+
+	retreiveOss() {
+		let url1 = this.ossEndpoint + 'mexico';
+		let url2 = this.ossEndpoint + 'monterrey';
+		let url3 = this.ossEndpoint + 'guadalajara';
+
+		let headers = new Headers();
+		headers.append('Content-Type', "application/json;charset=utf-8");
+
+		let mex = this.http.get(url1, {
+			headers: headers
+		})
+			.map(response => response.json())
+			.catch(error => Observable.throw(error || 'Server error'));
+
+		let mty = this.http.get(url2, {
+			headers: headers
+		})
+			.map(response => response.json())
+			.catch(error => Observable.throw(error || 'Server error'));
+
+		let gdl = this.http.get(url3, {
+			headers: headers
+		})
+			.map(response => response.json())
+			.catch(error => Observable.throw(error || 'Server error'));
+
+		return Observable.forkJoin([mex, mty, gdl]);
 	}
 
 	whatKpi(node, mo) {

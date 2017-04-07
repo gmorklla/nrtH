@@ -18,6 +18,8 @@ export class IntervalRequestService {
 	// Fn to update the chart
 	updateChart() {
 
+		clearInterval(this.intervalo);
+
 		// Get the initial and final time that was input for the user
 		this.horaI = this.props.getProps().horaI;
 		this.horaF = this.props.getProps().horaF;
@@ -29,7 +31,7 @@ export class IntervalRequestService {
 		// Set the interval in which will be requested the info to the server
 		this.intervalo = setInterval(() => {
 			this.repeatKpiCall();
-		}, 5000);
+		}, 15000);
 	}
 
 	repeatKpiCall() {

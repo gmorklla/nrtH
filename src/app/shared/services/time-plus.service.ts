@@ -17,6 +17,11 @@ export class TimePlusService {
 			if (hour == 24) {
 				hour = 0;
 			}
+		} else if(minutes > 60) {
+			hour += 1;
+			let dif = minutes - 60;
+			minutes = 0 + dif;
+			console.info(minutes);
 		}
 
 		let hourAfter = hour.toString();

@@ -13,6 +13,7 @@ import { AppLoadingService } from '../shared/services/app-loading.service';
 export class SidebarComponent implements OnInit {
   data;
   regiones: { nombre: string, oss }[] = [];
+  oss;
   @Output() emitOss = new EventEmitter<any>();
   @Output() openSideNav = new EventEmitter<any>();
 
@@ -24,6 +25,15 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.gettingData();
+    // this.http.retreiveOss().subscribe(
+    //     results => {
+    //       console.log(results[0], results[1], results[2]);
+    //       this.processData(results);
+    //     },
+    //     error => {
+    //       console.error(error);
+    //     }
+    //  );
   }
 
   gettingData() {
@@ -31,9 +41,8 @@ export class SidebarComponent implements OnInit {
     this.http.getConfiguration(1).subscribe(
       result => {
         this.data = result;
-        // console.log(this.data);
+        console.log("Configuration data: ", this.data);
         this.processData();
-        AppLoadingService.get( 'AppLoading' ).emit( 'false' );
       },
       error => {
         console.error(error);        
@@ -42,6 +51,18 @@ export class SidebarComponent implements OnInit {
   }
 
   processData() {
+    // let ossArr = [];
+
+    // for(var i = 0; i < x.length; i ++) {
+    //   if(x[i].ossList.length > 0) {        
+    //     for(var j = 0; j < x[i].ossList.length; j ++) {
+    //       ossArr.push(x[i].ossList[j]);
+    //     }
+    //   }
+    // }
+
+    // this.oss = ossArr;
+
     for (var i = 0; i < this.data.regions.length; ++i) {
       var nombre = this.data.regions[i].name;
       var oss = this.data.regions[i].oss;

@@ -1,10 +1,11 @@
-import { Component, OnInit, Inject, Input, HostListener, OnChanges, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, Input, HostListener, OnChanges, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MdDialog } from '@angular/material';
 import { MdProgressBar } from '@angular/material';
 import { NodeGraphDialogComponent } from '../node-graph-dialog/node-graph-dialog.component';
 import { HttpGetServiceService } from '../shared/services/http-get-service.service';
 import { ErrorSnackService } from '../shared/services/error-snack.service';
 import { AppLoadingService } from '../shared/services/app-loading.service';
+import { EmitterService } from '../shared/services/emitter.service';
 import * as _ from 'underscore';
 
 @Component({
@@ -12,7 +13,7 @@ import * as _ from 'underscore';
 	templateUrl: './nodes-menu.component.html',
 	styleUrls: ['./nodes-menu.component.css']
 })
-export class NodesMenuComponent implements OnInit, OnChanges {
+export class NodesMenuComponent implements OnInit, OnChanges, AfterViewInit {
 
 	@Input() ossId;
 	name: string = '';
@@ -34,12 +35,19 @@ export class NodesMenuComponent implements OnInit, OnChanges {
 	ngOnInit() {
 		this.ancho = (window.innerWidth) + 'px';
 
-		AppLoadingService.get( 'AppLoading' ).emit( 'true' );
-
 		if(localStorage.getItem("data")) {
-			console.log("localStorage data");
+			console.log("localStorage data");			
 			this.procesar(JSON.parse(localStorage.getItem("data")));
+		} else {
+			EmitterService.get('storage').subscribe((res) => {
+				this.procesar(JSON.parse(localStorage.getItem("data")));
+				AppLoadingService.get( 'AppLoading' ).emit( 'false' );
+			});
 		}
+
+	}
+
+	ngAfterViewInit() {
 
 	}
 

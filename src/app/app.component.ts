@@ -35,6 +35,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.nodeDataEmitted = x;
   }
   appLoadingStatus(x: string) {
+    console.info("appLoading", x);
       if(x == "true") {
         this.appLoading = true;
       } else {

@@ -22,9 +22,10 @@ export class TempComponent implements OnInit, OnChanges {
 
 	ngOnChanges(changes: SimpleChanges) {
 		if (changes['data']) {
-			if (this.barChartData.length == 0 && this.data.kpis.length > 0) {				
+			if (this.barChartData.length == 0 && this.data.kpis.length > 0) {
+				console.log("Data chart: ", this.data);
 				let indice = this.data.kpis.length - 1;
-				this.title = this.data.type;				
+				this.title = this.data.type;
 				let valor = this.data.kpis[indice].calKpiValue;
 				let time = this.data.kpis[indice].time;
 				time = time.slice(0, 2) + ":" + time.slice(2);
@@ -40,7 +41,7 @@ export class TempComponent implements OnInit, OnChanges {
 		responsive: true,
 		barValueSpacing: 5,
 		fill: true,
-		title: { 
+		title: {
 			display: true,
 			padding: 20,
 			fontStyle: 'bold',
@@ -49,6 +50,18 @@ export class TempComponent implements OnInit, OnChanges {
 		},
 		tooltips: {
 			intersect: false
+		},
+		scales: {
+			yAxes: [{
+				ticks: {
+					max: 100,
+					beginAtZero: true,
+					callback: function(value) {
+						return Number(value).toFixed(0);
+					}
+				}
+			}
+			]
 		}
 	};
 	public barChartLabels: string[] = [];
@@ -84,15 +97,15 @@ export class TempComponent implements OnInit, OnChanges {
 		let titulo = this.data.type;
 		for (var i = 0; i < result.length; ++i) {
 			if (result[i].type == this.data.type) {
-				if (result[i].kpis[0] != undefined && result[i].kpis.length > 0) {					
+				if (result[i].kpis[0] != undefined && result[i].kpis.length > 0) {
 					let numero = result[i].kpis.length - 1;
 					valor = result[i].kpis[numero].calKpiValue;
-					time = result[i].kpis[numero].time;
-					time = time.slice(0, 2) + ":" + time.slice(2);					
+					time = result[i].startTime;
+					time = time.slice(0, 2) + ":" + time.slice(2);
 					//Update here
 					let clone = JSON.parse(JSON.stringify(this.barChartData));
-					if(clone[0]) {
-						clone[0].data.push(valor);	
+					if (clone[0]) {
+						clone[0].data.push(valor);
 						this.barChartData = clone;
 					} else {
 						this.title = this.data.type;
@@ -100,7 +113,7 @@ export class TempComponent implements OnInit, OnChanges {
 						this.barChartData.push({ data: [valor], label: this.title });
 					}
 					this.barChartLabels.push(time);
-					
+
 				} else {
 					let mensaje = "There is no kpi data";
 					this.errorSnack.openSnackBar(mensaje, "Ok");

@@ -38,7 +38,8 @@ export class DashboardComponent implements OnInit, OnChanges {
 	kpiProps: Array<{ nombre: number, valor: number }> = [];
 	nodoMoKpisActual;
 	tiempo: string;
-	softAlarm: string;
+	softAlarm: Array<any> = [];
+	loadingSoftAlarm: boolean = false;
 
 	constructor(private http: HttpGetServiceService, private kpiValues: KpiValuesService, private errorSnack: ErrorSnackService, private props: VarsActService, private intervaloS: IntervalRequestService) { }
 
@@ -206,7 +207,6 @@ export class DashboardComponent implements OnInit, OnChanges {
 		if (encontrado) {
 			console.log("Encontrado");
 			if (this.kpiInfo.kpis.length != 0) {
-				this.getSoftAlarm();
 				this.procesaKpiValues();
 			} else {
 				this.errorSnack.openSnackBar("Kpi without data", "Ok");
@@ -260,13 +260,19 @@ export class DashboardComponent implements OnInit, OnChanges {
 		}
 	}
 
-	getSoftAlarm() {
-		this.loading = true;
+	getSoftAlarm(range: string) {
+		this.loadingSoftAlarm = true;
+		this.softAlarm = [];
 		let indice = this.kpiInfo.kpis.length - 1;
 
 		let tipo;
-		let dateTime = this.kpiInfo.kpis[indice].date + this.kpiInfo.kpis[indice].time;
-		// dateTime = dateTime.split(':')[0] + dateTime.split(':')[1];
+		let dateTime;
+		
+		if(range == "q") {
+			dateTime = this.kpiInfo.kpis[indice].date + this.kpiInfo.kpis[indice].time;
+		} else if(range == "h") {
+			dateTime = this.kpiInfo.kpis[indice].date + this.kpiInfo.kpis[indice].time.slice(0,2);
+		}		
 
 		switch (this.kpiInfo.type) {
 			case "Accessibility":
@@ -293,14 +299,29 @@ export class DashboardComponent implements OnInit, OnChanges {
 				break;
 		}
 
-		this.http.getSoftAlarm(tipo, dateTime).subscribe(
+		this.http.getSoftAlarm(tipo, dateTime, range).subscribe(
 			result => {
-				this.loading = false;
-				console.log(result[1]);
-				this.softAlarm = result[1];
+				this.loadingSoftAlarm = false;
+				this.handleSoftAlarmRespond(result, range);
 			},
-			error => console.error(error)
-		);
+			error => {
+				console.error(error);
+				this.errorSnack.openSnackBar("Failed softAlarm request", "Ok");
+				this.loadingSoftAlarm = false;
+			});
+	}
+
+	handleSoftAlarmRespond(result, range) {
+		let clone = [];
+		if(range == "q") {
+			clone.push(result[1]);
+			this.softAlarm = clone;	
+		} else if(range == "h") {
+			for(var i = 1; i < result.length; i++) {
+				clone.push(result[i]);
+			}
+			this.softAlarm = clone;
+		}
 	}
 
 }

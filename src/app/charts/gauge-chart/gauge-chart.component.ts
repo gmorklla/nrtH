@@ -30,6 +30,20 @@ export class GaugeChartComponent implements AfterViewInit, OnChanges {
 	}
 
 	generarChart() {
+		let colores;
+		let label;
+
+		if(this.title == "Latency") {
+			console.info("Latency");
+			colores = ['#60B044', '#F6C600', '#F97600', '#FF0000'];
+			label = " ms";
+		} else if(this.title == "Throughput") {
+			colores = ['#FF0000', '#F97600', '#F6C600', '#60B044'];
+			label = " Mbps";
+		} else {
+			colores = ['#FF0000', '#F97600', '#F6C600', '#60B044'];
+			label = " %";
+		}
 
 		this.chart = c3.generate({
 			bindto: this.host,
@@ -50,7 +64,7 @@ export class GaugeChartComponent implements AfterViewInit, OnChanges {
 			gauge: {
 				label: {
 					format: function(value, ratio) {
-						return value + '%';
+						return value + label;
 					},
 					show: true // to turn off the min/max labels.
 				},
@@ -60,7 +74,7 @@ export class GaugeChartComponent implements AfterViewInit, OnChanges {
 				width: 25 // for adjusting arc thickness
 			},
 			color: {
-				pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+				pattern: colores, // the three color levels for the percentage values.
 				threshold: {
 					//            unit: 'value', // percentage is default
 					//            max: 200, // 100 is default
